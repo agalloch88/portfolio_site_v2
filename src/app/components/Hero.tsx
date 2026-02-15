@@ -33,7 +33,7 @@ export default function Hero() {
         </p>
         <div className="max-w-md mx-auto mt-8">
           <img
-            src="https://streak-stats.demolab.com?user=ryankirsch&theme=tokyonight&hide_border=true&background=1a1b26"
+            src="https://streak-stats.demolab.com?user=agalloch88&theme=tokyonight&hide_border=true&background=1a1b26"
             alt="GitHub Streak"
           />
         </div>

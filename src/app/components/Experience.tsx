@@ -1,38 +1,31 @@
 const timeline = [
   {
-    role: "Lead Backend Engineer & Cloud Architect",
-    company: "Philadelphia Inquirer",
-    period: "2023 – Present",
+    role: "Lead Backend Engineer",
+    company: "The Philadelphia Inquirer",
+    period: "Sep 2022 – Present",
     description:
-      "Architecting scalable cloud infrastructure and data platforms for digital media at enterprise scale.",
+      "Architecting scalable cloud infrastructure and data platforms for digital media. Migrated ESP from Salesforce Marketing Cloud to Marigold SailThru ($100K+ annual savings). Reengineered ETL pipelines in Python/PySpark (50% more resilient, $120K/yr savings). Built serverless ETL on AWS replacing legacy billing systems. Created AI/RAG app over proprietary historical archive and internal HR chatbot. DevSecOps improvements drove 12% YoY checkout conversion increase. Cloud-first serverless migration cut operational costs 75%.",
   },
   {
-    role: "Backend Engineer",
-    company: "Philadelphia Inquirer",
-    period: "2022 – 2023",
+    role: "Software Engineer",
+    company: "Longevity Consulting",
+    period: "Aug 2021 – Sep 2022",
     description:
-      "Built and maintained production APIs and microservices serving millions of daily readers.",
+      "Built full stack GRC platform using React, Django, FastAPI, GraphQL, and AWS FarGate. Developed RPA solutions with UiPath Studio saving $3K+/employee/year.",
   },
   {
-    role: "Full-Stack Developer",
-    company: "—",
-    period: "July 2021 – 2022",
+    role: "IT Project Manager",
+    company: "Asset Strategies International",
+    period: "Sep 2011 – Aug 2021",
     description:
-      "Transitioned from business operations to software development. Built production applications using modern web technologies.",
+      "Led CRM/eCommerce integration (HubSpot, Shopify) and database migration from proprietary systems. Managed digital transformation initiatives bridging business operations and technology.",
   },
   {
-    role: "Operations & Strategy",
-    company: "Family Precious Metals Business",
-    period: "2011 – 2021",
-    description:
-      "Led business operations, strategic communications, and digital transformation initiatives. This decade taught me how technology serves business goals — not the other way around.",
-  },
-  {
-    role: "Strategic Communications",
-    company: "Education Foundation",
+    role: "Education",
+    company: "UW-Madison · Nucamp · AWS Certifications",
     period: "",
     description:
-      "Where it all started. Communications degree that taught me how to translate complex concepts into clear, actionable insights.",
+      "BA Public Relations, UW-Madison. Nucamp Full Stack + Python/DevOps certifications. AWS Solutions Architect Associate, AWS Data Engineering Associate, AWS Cloud Practitioner.",
   },
 ];
 

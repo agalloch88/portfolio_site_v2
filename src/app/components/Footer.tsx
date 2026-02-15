@@ -8,7 +8,7 @@ export default function Footer() {
         </p>
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/ryankirsch"
+            href="https://github.com/agalloch88"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-electricBlue transition-colors"
@@ -16,7 +16,7 @@ export default function Footer() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/ryankirsch"
+            href="https://www.linkedin.com/in/ryan-s-kirsch"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-electricBlue transition-colors"

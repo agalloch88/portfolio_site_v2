@@ -1,33 +1,23 @@
 const categories = [
   {
-    title: "Backend & APIs",
-    description: "Languages & Frameworks",
-    items: ["Python", "TypeScript", "Node.js", "GraphQL", "REST APIs"],
+    title: "Languages & Frameworks",
+    description: "Core development stack",
+    items: ["Python", "TypeScript", "JavaScript", "HTML", "CSS", "React", "Node.js", "NextJS", "Flask", "Django", "FastAPI"],
   },
   {
     title: "Cloud & Infrastructure",
-    description: "Platforms & Tools",
-    items: ["AWS", "Google Cloud", "Azure", "Docker", "Kubernetes", "Terraform"],
+    description: "Platforms & DevOps",
+    items: ["AWS", "GCP", "Docker", "Kubernetes", "Serverless Framework", "ECS/ECR", "EKS", "FarGate", "Lambda", "API Gateway", "EC2", "IAM", "KMS"],
   },
   {
-    title: "Data Engineering & Analytics",
-    description: "Pipeline Tools & Databases",
-    items: [
-      "Apache Spark",
-      "Apache Airflow",
-      "Apache Kafka",
-      "PostgreSQL",
-      "Redis",
-      "BigQuery",
-      "Elasticsearch",
-      "DynamoDB",
-      "dbt",
-    ],
+    title: "Data Engineering",
+    description: "Pipelines, messaging & databases",
+    items: ["PostgreSQL", "MongoDB", "DynamoDB", "Redis", "Elasticsearch", "BigQuery", "S3", "SQS", "SNS", "EventBridge", "Kinesis", "PySpark"],
   },
   {
     title: "Enterprise & Integration",
-    description: "CRM & Automation",
-    items: ["Salesforce", "API Design", "System Integration", "Data Flow Optimization"],
+    description: "CRM, automation & AI",
+    items: ["Salesforce", "GraphQL", "OpenAI API", "RAG", "UiPath", "HubSpot", "Shopify"],
   },
 ];
 

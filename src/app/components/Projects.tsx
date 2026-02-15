@@ -1,31 +1,45 @@
 const projects = [
   {
-    title: "Cloud Infrastructure Platform",
+    title: "Email Service Provider Migration",
     description:
-      "Scalable cloud infrastructure serving millions of daily readers with high availability and fault tolerance.",
-    metrics: "99.99% uptime • Millions of daily requests",
-    tags: ["AWS", "Terraform", "Docker", "Kubernetes"],
+      "Migrated the Philadelphia Inquirer's ESP from Salesforce Marketing Cloud to Marigold SailThru. Architected data pipelines integrating Salesforce Service Cloud for seamless subscriber management.",
+    metrics: "$100K+ annual savings • Zero subscriber data loss",
+    tags: ["Python", "Salesforce", "AWS", "Data Pipelines"],
   },
   {
-    title: "Real-Time Data Pipeline",
+    title: "Serverless ETL Platform",
     description:
-      "ETL/ELT pipeline processing terabytes of content data daily with Apache Spark and Airflow orchestration.",
-    metrics: "Terabytes processed daily • Sub-second latency",
-    tags: ["Python", "Spark", "Airflow", "BigQuery"],
+      "Built serverless ETL on AWS using Serverless Framework — S3, Lambda, EventBridge, SQS, and DynamoDB — replacing legacy billing systems with scalable, event-driven architecture.",
+    metrics: "75% cost reduction • 50% less manual workload",
+    tags: ["AWS Lambda", "EventBridge", "SQS", "DynamoDB", "Serverless Framework"],
   },
   {
-    title: "ML Inference Service",
+    title: "AI/RAG Historical Archive",
     description:
-      "Production ML pipeline for content recommendation and classification, serving predictions at scale.",
-    metrics: "< 50ms p99 latency • 10M+ predictions/day",
-    tags: ["Python", "FastAPI", "Docker", "Redis"],
+      "Built a privately-hosted AI/RAG application over the Philadelphia Inquirer's proprietary historical archive (1977–present), enabling intelligent search and content discovery across decades of journalism.",
+    metrics: "45+ years of searchable archive • Private hosting",
+    tags: ["Python", "OpenAI", "RAG", "Vector DB", "AWS"],
   },
   {
-    title: "API Gateway & Microservices",
+    title: "ETL Pipeline Reengineering",
     description:
-      "Distributed microservices architecture handling high-throughput content delivery and integration.",
-    metrics: "500+ req/s throughput • Zero-downtime deployments",
-    tags: ["TypeScript", "Node.js", "GraphQL", "PostgreSQL"],
+      "Reengineered legacy Informatica ETL pipelines in Python/PySpark, achieving 50% greater resilience and eliminating expensive proprietary tooling.",
+    metrics: "$120K/year savings • 50% more resilient",
+    tags: ["Python", "PySpark", "ETL", "Data Engineering"],
+  },
+  {
+    title: "Internal HR Chatbot",
+    description:
+      "Built a Slack-based RAG chatbot using OpenAI API for internal HR queries — employee handbook, PTO policies, org charts — reducing HR ticket volume.",
+    metrics: "Slack-native • Real-time RAG responses",
+    tags: ["OpenAI API", "Slack", "Python", "RAG"],
+  },
+  {
+    title: "Full Stack GRC Platform",
+    description:
+      "Designed and built a governance, risk, and compliance platform at Longevity Consulting using React, Django, FastAPI, GraphQL, and AWS FarGate.",
+    metrics: "Full stack • Enterprise GRC",
+    tags: ["React", "Django", "FastAPI", "GraphQL", "AWS FarGate"],
   },
 ];
 
@@ -38,9 +52,8 @@ export default function Projects() {
         </h2>
         <div className="w-16 h-1 bg-electricBlue mb-4 rounded-full" />
         <p className="text-mutedGray mb-12 max-w-2xl text-base sm:text-lg">
-          From cloud infrastructure that scales to millions of users to data
-          pipelines processing terabytes daily, here&apos;s how I solve complex
-          technical challenges.
+          Production systems powering digital media at scale — from serverless
+          data pipelines to AI-powered applications over decades of content.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

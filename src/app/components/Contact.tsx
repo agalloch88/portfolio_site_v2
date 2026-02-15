@@ -33,7 +33,7 @@ export default function Contact() {
 
         <div className="flex items-center justify-center gap-6 text-sm">
           <a
-            href="https://linkedin.com/in/ryankirsch"
+            href="https://www.linkedin.com/in/ryan-s-kirsch"
             target="_blank"
             rel="noopener noreferrer"
             className="text-mutedGray hover:text-electricBlue transition-colors"
@@ -41,7 +41,7 @@ export default function Contact() {
             LinkedIn
           </a>
           <a
-            href="https://github.com/ryankirsch"
+            href="https://github.com/agalloch88"
             target="_blank"
             rel="noopener noreferrer"
             className="text-mutedGray hover:text-electricBlue transition-colors"
