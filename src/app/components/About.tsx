@@ -33,11 +33,21 @@ export default function About() {
             Currently expanding into data engineering and AI/ML because the future
             of backend is data-driven, and I&apos;m building it.
           </p>
-          <p className="text-sm text-steel italic">
-            When I am not engineering systems, you will find me on the mats
-            training Brazilian Jiu-Jitsu — the discipline, problem-solving, and
-            continuous improvement translate directly to how I approach code.
-          </p>
+
+          <div className="flex flex-col sm:flex-row items-center gap-6 bg-charcoal border border-electricBlue/10 rounded-xl p-6">
+            <img
+              src="/ryan-bjj.jpg"
+              alt="Ryan with Lucas Lepri at Lepri Jiu Jitsu Academy"
+              className="w-48 h-48 rounded-lg object-cover flex-shrink-0"
+            />
+            <p className="text-sm text-steel italic">
+              When I&apos;m not engineering systems, you&apos;ll find me on the mats
+              training Brazilian Jiu-Jitsu — here with Lucas Lepri, one of the
+              greatest competitors in BJJ history, at Lepri Jiu Jitsu Academy. The
+              discipline, problem-solving, and continuous improvement translate
+              directly to how I approach code.
+            </p>
+          </div>
         </div>
       </div>
     </section>

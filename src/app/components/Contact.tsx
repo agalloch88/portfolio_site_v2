@@ -24,7 +24,7 @@ export default function Contact() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <a
-            href="mailto:ryan@ryankirsch.dev"
+            href="mailto:ryankirsch88@gmail.com"
             className="px-8 py-3 bg-electricBlue text-navy font-semibold rounded-lg hover:scale-105 transition-transform duration-200"
           >
             Email Me
