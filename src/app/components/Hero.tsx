@@ -17,7 +17,7 @@ export default function Hero() {
           <span className="text-electricBlue">Full stop.</span>
         </h1>
         <p className="text-lg sm:text-xl text-mutedGray max-w-2xl mx-auto mb-10 leading-relaxed">
-          Lead Backend Software Engineer &amp; Cloud Architect at the Philadelphia Inquirer.
+          Lead Backend Engineer &amp; Cloud Architect, Philadelphia Inquirer.
           I design and deploy production infrastructure, data platforms, and AI/ML
           pipelines that handle millions of requests and petabytes of data.
         </p>

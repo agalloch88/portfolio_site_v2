@@ -9,14 +9,14 @@ const projects = [
   {
     title: "Serverless ETL Platform",
     description:
-      "Built serverless ETL on AWS using Serverless Framework — S3, Lambda, EventBridge, SQS, and DynamoDB — replacing legacy billing systems with scalable, event-driven architecture.",
+      "Built serverless ETL on AWS using Serverless Framework with S3, Lambda, EventBridge, SQS, and DynamoDB, replacing legacy billing systems with scalable, event-driven architecture.",
     metrics: "75% cost reduction • 50% less manual workload",
     tags: ["AWS Lambda", "EventBridge", "SQS", "DynamoDB", "Serverless Framework"],
   },
   {
     title: "AI/RAG Historical Archive",
     description:
-      "Built a privately-hosted AI/RAG application over the Philadelphia Inquirer's proprietary historical archive (1977–present), enabling intelligent search and content discovery across decades of journalism.",
+      "Built a privately-hosted AI/RAG application over the Philadelphia Inquirer's proprietary historical archive (1977-present), enabling intelligent search and content discovery across decades of journalism.",
     metrics: "45+ years of searchable archive • Private hosting",
     tags: ["Python", "OpenAI", "RAG", "Vector DB", "AWS"],
   },
@@ -30,7 +30,7 @@ const projects = [
   {
     title: "Internal HR Chatbot",
     description:
-      "Built a Slack-based RAG chatbot using OpenAI API for internal HR queries — employee handbook, PTO policies, org charts — reducing HR ticket volume.",
+      "Built a Slack-based RAG chatbot using OpenAI API for internal HR queries: employee handbook, PTO policies, org charts, reducing HR ticket volume.",
     metrics: "Slack-native • Real-time RAG responses",
     tags: ["OpenAI API", "Slack", "Python", "RAG"],
   },
