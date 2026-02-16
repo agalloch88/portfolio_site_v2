@@ -56,7 +56,7 @@ body {
 }
 
 .hero-gradient {
-  background: linear-gradient(-45deg, #1a1b26, #24283b, #1a1b26, #2ac3de10);
+  background: linear-gradient(-45deg, #1a1b26, #24283b, #1a1b26, #2ac3de20);
   background-size: 400% 400%;
   animation: gradient-shift 15s ease infinite;
 }
@@ -77,6 +77,19 @@ body {
   animation: rotate-gradient 3s linear infinite;
 }
 .card-glow:hover::before {
+  opacity: 1;
+}
+.card-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 27, 38, 0.85);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card-glow:hover::after {
   opacity: 1;
 }
 @keyframes rotate-gradient {

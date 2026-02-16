@@ -30,8 +30,8 @@ export default function ParticleBackground() {
             color: '#7aa2f7',
             distance: 150,
             enable: true,
-            opacity: 0.15,
-            width: 1,
+            opacity: 0.25,
+            width: 1.2,
           },
           move: {
             enable: true,
@@ -43,7 +43,7 @@ export default function ParticleBackground() {
             value: 40,
             density: { enable: true },
           },
-          opacity: { value: { min: 0.1, max: 0.4 } },
+          opacity: { value: { min: 0.2, max: 0.6 } },
           size: { value: { min: 1, max: 3 } },
         },
         interactivity: {
@@ -51,7 +51,7 @@ export default function ParticleBackground() {
             onHover: { enable: true, mode: 'grab' },
           },
           modes: {
-            grab: { distance: 200, links: { opacity: 0.3 } },
+            grab: { distance: 200, links: { opacity: 0.5 } },
           },
         },
         detectRetina: true,

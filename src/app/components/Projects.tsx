@@ -131,18 +131,18 @@ export default function Projects() {
               key={p.title}
               skip={skip}
               index={index}
-              className={`bg-charcoal card-glow border border-electricBlue/10 rounded-xl p-6 hover:border-electricBlue/30 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(42,195,222,0.15)] transition-all transition-shadow duration-300 group ${
+              className={`relative bg-charcoal card-glow border border-electricBlue/10 rounded-xl p-6 hover:border-electricBlue/30 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(42,195,222,0.15)] transition-all transition-shadow duration-300 group ${
                 index < 2 ? "md:col-span-2" : "md:col-span-1"
               }`}
             >
-              <h3 className="font-mono text-lg font-semibold text-white mb-2 group-hover:text-lightGray transition-colors">
+              <h3 className="relative z-10 font-mono text-lg font-semibold text-white mb-2 group-hover:text-white transition-colors">
                 {p.title}
               </h3>
-              <p className="text-mutedGray text-sm mb-3 leading-relaxed">
+              <p className="relative z-10 text-mutedGray text-sm mb-3 leading-relaxed group-hover:text-gray-200">
                 {p.description}
               </p>
-              <p className="text-xs text-steel mb-4">{p.metrics}</p>
-              <div className="flex flex-wrap gap-2 mb-4">
+              <p className="relative z-10 text-xs text-steel mb-4 group-hover:text-gray-300">{p.metrics}</p>
+              <div className="relative z-10 flex flex-wrap gap-2 mb-4">
                 {p.tags.map((t) => (
                   <span
                     key={t}
@@ -152,7 +152,7 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <p className="text-xs text-steel italic">
+              <p className="relative z-10 text-xs text-steel italic">
                 Enterprise production system
               </p>
             </TiltCard>
