@@ -38,6 +38,8 @@ export default function Hero() {
             <source srcSet="/ryan-headshot.webp" type="image/webp" />
             <img
               src="/ryan-headshot.jpg"
+              width={144}
+              height={144}
               alt="Ryan Kirsch"
               className="w-36 h-36 rounded-full mx-auto object-cover border-2 border-electricBlue/40 shadow-lg shadow-electricBlue/10"
             />
@@ -113,6 +115,8 @@ export default function Hero() {
           {!streakErrored ? (
             <img
               src="https://streak-stats.demolab.com?user=agalloch88&theme=tokyonight&hide_border=true&background=1a1b26"
+              width={495}
+              height={195}
               loading="lazy"
               alt="Ryan Kirsch's GitHub contribution streak statistics"
               onError={() => setStreakErrored(true)}
