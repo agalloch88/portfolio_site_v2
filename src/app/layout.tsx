@@ -69,7 +69,7 @@ export default function RootLayout({
                 url: "https://ryankirsch.dev",
                 sameAs: [
                   "https://github.com/agalloch88",
-                  "https://www.linkedin.com/in/ryankirsch",
+                  "https://www.linkedin.com/in/ryan-s-kirsch",
                 ],
               },
               {
