@@ -91,7 +91,7 @@ export default function Hero() {
 
         <motion.div
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          {...fadeUp(1.4)}
+          {...fadeUp(0.6)}
         >
           <a
             href="#projects"
@@ -117,6 +117,7 @@ export default function Hero() {
               src="https://streak-stats.demolab.com?user=agalloch88&theme=tokyonight&hide_border=true&background=1a1b26"
               width={495}
               height={195}
+              className="w-full max-w-full h-auto"
               loading="lazy"
               alt="Ryan Kirsch's GitHub contribution streak statistics"
               onError={() => setStreakErrored(true)}

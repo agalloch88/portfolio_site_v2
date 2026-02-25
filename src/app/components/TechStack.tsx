@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 
 const categories = [
   {
@@ -112,26 +112,34 @@ export default function TechStack() {
             type="button"
             onClick={() => setIsExpanded((prev) => !prev)}
             aria-expanded={isExpanded}
-            className="font-mono text-sm text-electricBlue hover:text-cyberTeal transition-colors duration-200"
+            className="border border-electricBlue/40 rounded-full px-4 py-1.5 text-sm font-mono text-electricBlue hover:bg-electricBlue/10 transition-colors cursor-pointer"
           >
             {isExpanded ? "Hide full stack" : "Show full stack ↓"}
           </button>
         </div>
 
-        {isExpanded && (
-          <div className="mt-6 bg-charcoal/60 border border-electricBlue/10 rounded-xl p-6">
-            <div className="flex flex-wrap gap-2">
-              {fullStackSkills.map((skill) => (
-                <span
-                  key={skill}
-                  className="px-3 py-1 text-xs font-mono bg-navy border border-steel/30 text-lightGray rounded-full"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {isExpanded && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="mt-6 bg-charcoal/60 border border-electricBlue/10 rounded-xl p-6"
+            >
+              <div className="flex flex-wrap gap-2">
+                {fullStackSkills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1 text-xs font-mono bg-navy border border-steel/30 text-lightGray rounded-full"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
