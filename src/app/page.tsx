@@ -12,6 +12,12 @@ import AnimatedSection from "./components/AnimatedSection";
 export default function Home() {
   return (
     <SmoothScroll>
+      <a
+        href="#about"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:bg-electricBlue focus:text-navy focus:px-4 focus:py-2 focus:rounded"
+      >
+        Skip to content
+      </a>
       <Navbar />
       <main>
         <Hero />

@@ -86,7 +86,7 @@ export default function Hero() {
 
         <motion.p
           className="text-lg sm:text-xl text-mutedGray max-w-2xl mx-auto mb-10 leading-relaxed"
-          {...fadeUp(1.2)}
+          {...fadeUp(0.9)}
         >
           Lead Backend Engineer at the Philadelphia Inquirer.
           I build data platforms and ETL/ELT pipelines using dbt, Dagster, PySpark, and Airflow,
@@ -95,17 +95,17 @@ export default function Hero() {
 
         <motion.div
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          {...fadeUp(0.6)}
+          {...fadeUp(1.1)}
         >
           <a
             href="#projects"
-            className="px-8 py-3 bg-electricBlue text-navy font-bold shadow-[0_0_20px_rgba(42,195,222,0.35)] rounded-lg hover:scale-105 transition-transform duration-200"
+            className="px-8 py-3 bg-electricBlue text-navy font-bold shadow-[0_0_20px_rgba(42,195,222,0.35)] rounded-lg hover:scale-105 transition-transform duration-200 focus-visible:ring-2 focus-visible:ring-electricBlue focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
           >
             View My Work
           </a>
           <a
             href="#contact"
-            className="px-8 py-3 border border-electricBlue text-electricBlue font-semibold rounded-lg hover:bg-electricBlue/10 hover:text-white transition-colors duration-200"
+            className="px-8 py-3 border border-electricBlue text-electricBlue font-semibold rounded-lg hover:bg-electricBlue/10 hover:text-white transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-electricBlue focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
           >
             Get In Touch
           </a>
@@ -115,7 +115,7 @@ export default function Hero() {
           Building data pipelines, rolling BJJ, exploring AI
         </motion.p>
 
-        <motion.div className="max-w-md mx-auto mt-8" {...fadeUp(1.8)}>
+        <motion.div className="max-w-md mx-auto mt-8 min-h-[195px]" {...fadeUp(1.8)}>
           {!streakErrored ? (
             <img
               src="https://streak-stats.demolab.com?user=agalloch88&theme=tokyonight&hide_border=true&background=1a1b26"
