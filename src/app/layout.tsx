@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -53,6 +54,10 @@ export default function RootLayout({
       <body
         className="min-h-screen bg-navy text-lightGray font-sans antialiased"
       >
+        <Script
+          src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"
+          strategy="afterInteractive"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

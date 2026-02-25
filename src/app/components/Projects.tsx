@@ -1,30 +1,45 @@
 'use client';
 
-import { useRef, useCallback } from 'react';
+import { useRef, useCallback, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useReducedMotion } from 'framer-motion';
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  metrics: string;
+  tags: string[];
+  link?: string;
+  diagram?: string;
+};
+
+const projects: Project[] = [
   {
     title: "Health & Activity Analytics Pipeline",
     description:
-      "Built an end-to-end ELT pipeline ingesting real data from Oura Ring, GitHub, and OpenWeatherMap APIs. Transforms through a medallion architecture using Dagster for asset-centric orchestration and dbt Core for SQL transformations, with DuckDB as the OLAP warehouse. Includes 17 automated data quality tests and a Streamlit dashboard for wellness correlations.",
+      "Personal health data was fragmented across wearables, coding activity, and environmental signals, so I unified it into a single analytical flow. I built a Dagster-orchestrated ELT on DuckDB with a dbt Core medallion model, pulling from Oura, GitHub, and OpenWeatherMap. The result was 17 data quality tests and a Streamlit view that surfaced clear wellness and productivity correlations.",
     metrics: "3 live APIs • 17 dbt tests • Medallion architecture",
     tags: ["Dagster", "dbt Core", "DuckDB", "Python", "Streamlit"],
     link: "https://github.com/agalloch88/data-pipeline",
+    diagram:
+      "graph LR; Oura/GitHub/OpenWeatherMap -> Dagster Orchestration -> DuckDB Bronze -> Silver -> Gold -> dbt Core Transforms -> Streamlit Dashboard.",
   },
   {
     title: "Email Service Provider Migration",
     description:
-      "Migrated the Philadelphia Inquirer's ESP from Salesforce Marketing Cloud to Marigold SailThru. Architected data pipelines integrating Salesforce Service Cloud for seamless subscriber management.",
+      "The Philadelphia Inquirer needed to exit Salesforce Marketing Cloud without losing subscriber history or segmentation, so I designed a controlled migration path. I built pipelines from Salesforce Service Cloud into Marigold SailThru with rigorous field mapping, validation, and reconciliation. The cutover preserved segmentation and engagement history, achieved zero data loss, and reduced annual platform costs by over $100K.",
     metrics: "$100K+ annual savings • Zero subscriber data loss",
     tags: ["Python", "Salesforce", "AWS", "Data Pipelines"],
+    diagram:
+      "graph LR; Salesforce Marketing Cloud -(Legacy State)-> Migration Pipelines; Salesforce Service Cloud -(Subscriber Records)-> Migration Pipelines -> Field Mapping + Validation -> Reconciliation Layer -> Marigold SailThru -> Segmented Lists and Engagement History.",
   },
   {
     title: "Serverless ETL Platform",
     description:
-      "Built serverless ETL on AWS using Serverless Framework with S3, Lambda, EventBridge, SQS, and DynamoDB, replacing legacy billing systems with scalable, event-driven architecture.",
+      "Legacy billing ETL ran on always-on servers and required frequent manual intervention, so I replaced it with an event-driven AWS architecture. The flow used EventBridge, Lambda, SQS, DynamoDB, and S3 to decouple ingestion, transformation, and reconciliation while maintaining state and auditability. This shift cut infrastructure costs by 75% and reduced manual operations by half.",
     metrics: "75% cost reduction • 50% less manual workload",
     tags: ["AWS Lambda", "EventBridge", "SQS", "DynamoDB", "Serverless Framework"],
+    diagram:
+      "graph LR; Billing Event Trigger -> EventBridge -> Lambda Ingest -> SQS Queue -> Lambda Transform -> S3 Raw Storage and DynamoDB State + Audit -> Lambda Reconcile.",
   },
   {
     title: "AI/RAG Historical Archive",
@@ -73,6 +88,27 @@ const projects = [
 ];
 
 const springConfig = { stiffness: 300, damping: 30 };
+
+type Mermaid = {
+  initialize: (config: {
+    startOnLoad: boolean;
+    theme: string;
+    themeVariables: {
+      background: string;
+      primaryColor: string;
+      primaryBorderColor: string;
+      primaryTextColor: string;
+      lineColor: string;
+    };
+  }) => void;
+  run: (options?: { nodes?: Element[] }) => void;
+};
+
+declare global {
+  interface Window {
+    mermaid?: Mermaid;
+  }
+}
 
 function TiltCard({
   children,
@@ -136,6 +172,43 @@ function TiltCard({
 export default function Projects() {
   const prefersReducedMotion = useReducedMotion();
   const skip = !!prefersReducedMotion;
+  const runMermaid = useCallback(() => {
+    if (typeof window === 'undefined') return false;
+    const { mermaid } = window;
+    if (!mermaid || typeof mermaid.run !== 'function') return false;
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: 'dark',
+      themeVariables: {
+        background: '#0b1b2b',
+        primaryColor: '#0f2d46',
+        primaryBorderColor: '#2ac3de',
+        primaryTextColor: '#e6edf3',
+        lineColor: '#5a6b7a',
+      },
+    });
+    const nodes = Array.from(document.querySelectorAll('.mermaid'));
+    if (nodes.length === 0) return true;
+    mermaid.run({ nodes });
+    return true;
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    let attempts = 0;
+    const tryRun = () => {
+      if (cancelled) return;
+      const ok = runMermaid();
+      if (!ok && attempts < 10) {
+        attempts += 1;
+        window.setTimeout(tryRun, 200);
+      }
+    };
+    tryRun();
+    return () => {
+      cancelled = true;
+    };
+  }, [runMermaid]);
 
   return (
     <section id="projects" className="py-20 sm:py-28 px-4">
@@ -150,9 +223,9 @@ export default function Projects() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ perspective: 1000 }}>
-          {projects.map((p, index) => (
+          {projects.map((project, index) => (
             <TiltCard
-              key={p.title}
+              key={project.title}
               skip={skip}
               index={index}
               className={`relative bg-charcoal card-glow border border-electricBlue/10 rounded-xl p-6 hover:border-electricBlue/30 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(42,195,222,0.15)] transition-all transition-shadow duration-300 group ${
@@ -160,14 +233,16 @@ export default function Projects() {
               }`}
             >
               <h3 className="relative z-10 font-mono text-lg font-semibold text-white mb-2 group-hover:text-white transition-colors">
-                {p.title}
+                {project.title}
               </h3>
               <p className="relative z-10 text-mutedGray text-sm mb-3 leading-relaxed group-hover:text-gray-200">
-                {p.description}
+                {project.description}
               </p>
-              <p className="relative z-10 text-xs text-steel mb-4 group-hover:text-gray-300">{p.metrics}</p>
+              <p className="relative z-10 text-xs text-steel mb-4 group-hover:text-gray-300">
+                {project.metrics}
+              </p>
               <div className="relative z-10 flex flex-wrap gap-2 mb-4">
-                {p.tags.map((t) => (
+                {project.tags.map((t) => (
                   <span
                     key={t}
                     className="px-2 py-0.5 text-xs font-mono bg-navy border border-steel/30 text-cyberTeal rounded"
@@ -176,9 +251,22 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              {p.link ? (
+              {project.diagram && (
+                <div className="mt-4 border-t border-white/10 pt-4">
+                  <details className="group">
+                    <summary className="cursor-pointer text-sm text-orange-400 hover:text-orange-300 list-none flex items-center gap-1">
+                      <span className="group-open:hidden">▶ How it works</span>
+                      <span className="hidden group-open:inline">▼ How it works</span>
+                    </summary>
+                    <div className="mt-2">
+                      <pre className="mermaid text-xs">{project.diagram}</pre>
+                    </div>
+                  </details>
+                </div>
+              )}
+              {project.link ? (
                 <a
-                  href={p.link}
+                  href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative z-10 text-xs text-electricBlue hover:underline"

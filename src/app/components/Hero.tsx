@@ -54,7 +54,7 @@ export default function Hero() {
           className="font-mono text-electricBlue text-sm sm:text-base mb-4 tracking-wider"
           {...fadeUp(0.2)}
         >
-          Lead Backend Engineer · Cloud Architect · Data Engineering
+          Data Engineering · Cloud Pipelines · ML-Ready Infrastructure
         </motion.p>
 
         <h1 className="font-mono text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 gradient-text">
