@@ -27,7 +27,7 @@ export default function About() {
             deep business context. I understand both the technical requirements and
             the strategic implications. Whether I&apos;m optimizing <span className="tech-term">database queries</span>,
             containerizing microservices, or building <span className="tech-term">ML pipelines</span>, I&apos;m solving
-            real problems that move the needle.
+            problems with measurable outcomes: systems that cut costs, reduce latency, and ship on time.
           </p>
           <p className="text-cyberTeal font-medium">
             Currently expanding into data engineering and <span className="tech-term">AI/ML</span> because the future

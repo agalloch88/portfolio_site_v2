@@ -54,7 +54,7 @@ const projects = [
     tags: ["React", "Django", "FastAPI", "GraphQL", "AWS FarGate"],
   },
   {
-    title: "Roampage — Surprise Trip Planner",
+    title: "Roampage: Surprise Trip Planner",
     description:
       "Built a full-stack web app for planning and revealing surprise trips to partners. Features Supabase auth, PIN-protected trip reveal pages, LemonSqueezy payment integration for Pro tier, a 3D globe with real destination markers, and occasion-specific gift landing pages. Shipped from idea to paying product in under 30 days.",
     metrics: "Live at roampage.vercel.app · LemonSqueezy Pro tier",
@@ -62,7 +62,7 @@ const projects = [
     link: "https://roampage.vercel.app",
   },
   {
-    title: "TryAngles — BJJ Apparel Brand",
+    title: "TryAngles: BJJ Apparel Brand",
     description:
       "Designed and built the brand identity and landing page for a BJJ lifestyle apparel brand. Includes a custom Stripe-style WebGL FBM shader mesh gradient written in raw GLSL, mobile fallback CSS gradient, and email capture waitlist flow. Zero dependencies for the WebGL effect.",
     metrics: "Live at tryangles.shop · WebGL GLSL shader",

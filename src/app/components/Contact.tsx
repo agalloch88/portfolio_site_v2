@@ -10,9 +10,9 @@ export default function Contact() {
         <p className="text-mutedGray text-base sm:text-lg leading-relaxed mb-4">
           I&apos;m always interested in challenging backend problems, cloud
           architecture discussions, and opportunities to build systems that scale.
-          Whether you&apos;re looking to optimize your infrastructure, design data
+          If you&apos;re looking to optimize infrastructure, design data
           pipelines, or need someone who can translate business requirements into
-          robust technical solutions.
+          robust technical solutions, I&apos;d like to hear from you.
         </p>
 
         <p className="text-sm text-steel mb-8">
@@ -27,7 +27,7 @@ export default function Contact() {
             href="mailto:ryankirsch88@gmail.com"
             className="px-8 py-3 bg-electricBlue text-navy font-semibold rounded-lg hover:scale-105 transition-transform duration-200"
           >
-            Email Me
+            Send a Message
           </a>
         </div>
 
@@ -49,7 +49,7 @@ export default function Contact() {
             GitHub
           </a>
         </div>
-        <p className="text-xs text-steel mt-6">Thanks for visiting</p>
+        <p className="text-xs text-steel mt-6">Response time: usually same day.</p>
       </div>
     </section>
   );

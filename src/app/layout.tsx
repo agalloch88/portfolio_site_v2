@@ -18,11 +18,11 @@ const description =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ryankirsch.dev"),
-  title: "Ryan Kirsch — Backend Engineer & Data Engineering",
+  title: "Ryan Kirsch | Backend Engineer and Data Engineer",
   description,
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Ryan Kirsch — Backend Engineer & Data Engineering",
+    title: "Ryan Kirsch | Backend Engineer and Data Engineer",
     description,
     type: "website",
     siteName: "Ryan Kirsch",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ryan Kirsch — Backend Engineer & Data Engineering",
+    title: "Ryan Kirsch | Backend Engineer and Data Engineer",
     description,
     images: ["/ryan-headshot.jpg"],
   },
