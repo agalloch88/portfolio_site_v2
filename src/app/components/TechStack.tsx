@@ -16,50 +16,76 @@ const categories = [
   },
 ];
 
-const fullStackSkills = [
+const coreSkills = new Set([
   "Python",
   "TypeScript",
   "JavaScript",
-  "HTML",
-  "CSS",
   "React",
   "Node.js",
-  "NextJS",
-  "Flask",
-  "Django",
   "FastAPI",
-  "AWS",
+  "PostgreSQL",
+  "Redis",
+  "AWS (EC2, S3, Lambda, ECS/ECR, EKS, Fargate, Glue)",
   "GCP",
   "Docker",
   "Kubernetes",
-  "Serverless Framework",
-  "ECS/ECR",
-  "EKS",
-  "FarGate",
-  "Lambda",
-  "API Gateway",
-  "EC2",
-  "IAM",
-  "KMS",
-  "PostgreSQL",
-  "MongoDB",
-  "DynamoDB",
-  "Redis",
-  "Elasticsearch",
   "BigQuery",
-  "S3",
-  "SQS",
-  "SNS",
-  "EventBridge",
-  "Kinesis",
-  "PySpark",
-  "Salesforce",
-  "GraphQL",
+  "Spark (PySpark)",
   "OpenAI API",
-  "RAG",
-  "UiPath",
-  "HubSpot",
-  "Shopify",
+]);
+
+const fullStackGroups = [
+  {
+    title: "Languages",
+    items: ["Python", "TypeScript", "JavaScript", "SQL", "Bash/Shell", "Scala", "Go", "R"],
+  },
+  {
+    title: "Frameworks & Runtimes",
+    items: ["Next.js", "FastAPI", "Node.js", "React", "Spark (PySpark)", "dbt"],
+  },
+  {
+    title: "Cloud & Infrastructure",
+    items: [
+      "AWS (EC2, S3, Lambda, ECS/ECR, EKS, Fargate, Glue)",
+      "GCP",
+      "Azure",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "CI/CD pipelines",
+    ],
+  },
+  {
+    title: "Data & AI",
+    items: [
+      "Snowflake",
+      "Databricks",
+      "Airflow",
+      "Kafka",
+      "BigQuery",
+      "Redshift",
+      "PostgreSQL",
+      "MySQL",
+      "DuckDB",
+      "Pandas",
+      "NumPy",
+      "OpenAI API",
+    ],
+  },
+  {
+    title: "Enterprise & Tools",
+    items: [
+      "Jira",
+      "Confluence",
+      "Tableau",
+      "PowerBI",
+      "GitHub",
+      "GitLab",
+      "DataDog",
+      "Great Expectations",
+      "HubSpot",
+    ],
+  },
 ];
 
 export default function TechStack() {
@@ -127,16 +153,28 @@ export default function TechStack() {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="mt-6 bg-charcoal/60 border border-electricBlue/10 rounded-xl p-6"
             >
-              <div className="flex flex-wrap gap-2">
-                {fullStackSkills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 text-xs font-mono bg-navy border border-steel/30 text-lightGray rounded-full"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              {fullStackGroups.map((group) => (
+                <div key={group.title}>
+                  <div className="text-xs uppercase tracking-widest text-gray-500 mb-2 mt-4">
+                    {group.title}
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {group.items.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 text-xs font-mono bg-navy border border-steel/30 text-lightGray rounded-full"
+                      >
+                        {skill}
+                        {coreSkills.has(skill) && (
+                          <span className="ml-1 text-[9px] uppercase tracking-wider text-electricBlue/70">
+                            core
+                          </span>
+                        )}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </motion.div>
           )}
         </AnimatePresence>
