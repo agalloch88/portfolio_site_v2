@@ -54,7 +54,7 @@ export default function Hero() {
           className="font-mono text-electricBlue text-sm sm:text-base mb-4 tracking-wider"
           {...fadeUp(0.2)}
         >
-          Lead Backend Software Engineer &amp; Cloud Architect
+          Lead Backend Engineer · Cloud Architect · Data Engineering
         </motion.p>
 
         <h1 className="font-mono text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 gradient-text">
@@ -88,9 +88,9 @@ export default function Hero() {
           className="text-lg sm:text-xl text-mutedGray max-w-2xl mx-auto mb-10 leading-relaxed"
           {...fadeUp(1.2)}
         >
-          Lead Backend Engineer &amp; Cloud Architect, Philadelphia Inquirer.
-          I design and deploy production infrastructure, data platforms, and AI/ML
-          pipelines that handle millions of requests and petabytes of data.
+          Lead Backend Engineer at the Philadelphia Inquirer.
+          I build data platforms and ETL/ELT pipelines using dbt, Dagster, PySpark, and Airflow,
+          alongside cloud infrastructure and AI/ML systems handling millions of requests daily.
         </motion.p>
 
         <motion.div
@@ -112,7 +112,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.p className="text-sm text-steel mt-6" {...fadeUp(1.6)}>
-          Building systems, rolling BJJ, exploring AI
+          Building data pipelines, rolling BJJ, exploring AI
         </motion.p>
 
         <motion.div className="max-w-md mx-auto mt-8" {...fadeUp(1.8)}>

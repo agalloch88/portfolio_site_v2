@@ -14,15 +14,15 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 const description =
-  "Lead Backend Engineer & Cloud Architect at Philadelphia Inquirer. I design scalable cloud infrastructure, data platforms, and AI/ML pipelines. Python, AWS/GCP/Azure, Kubernetes expert.";
+  "Lead Backend Engineer at Philadelphia Inquirer building data platforms and pipelines. Specializing in dbt, Dagster, PySpark, Airflow, and cloud infrastructure on AWS/GCP/Azure. Data Engineering focused.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ryankirsch.dev"),
-  title: "Ryan Kirsch — Lead Backend Engineer & Cloud Architect",
+  title: "Ryan Kirsch — Backend Engineer & Data Engineering",
   description,
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Ryan Kirsch — Lead Backend Engineer & Cloud Architect",
+    title: "Ryan Kirsch — Backend Engineer & Data Engineering",
     description,
     type: "website",
     siteName: "Ryan Kirsch",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ryan Kirsch — Lead Backend Engineer & Cloud Architect",
+    title: "Ryan Kirsch — Backend Engineer & Data Engineering",
     description,
     images: ["/ryan-headshot.jpg"],
   },
@@ -61,7 +61,7 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Person",
                 name: "Ryan Kirsch",
-                jobTitle: "Lead Backend Engineer & Cloud Architect",
+                jobTitle: "Lead Backend Engineer & Data Engineering",
                 worksFor: {
                   "@type": "Organization",
                   name: "Philadelphia Inquirer",
