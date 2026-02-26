@@ -8,6 +8,13 @@ export const metadata = {
 
 const posts = [
   {
+    title: "What a Data Engineer Actually Builds for an LLM Application",
+    href: "/blog/data-engineer-llm-application",
+    date: "February 2026",
+    teaser:
+      "Ingestion, embedding pipelines, vector stores, and retrieval quality: what a DE actually owns when the team ships an LLM product.",
+  },
+  {
     title: "The Local-First Data Stack: Practical Lessons from Dagster, dbt, and DuckDB",
     href: "/blog/dagster-dbt-duckdb",
     date: "February 2026",
