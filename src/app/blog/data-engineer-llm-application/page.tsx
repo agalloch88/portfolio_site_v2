@@ -56,7 +56,8 @@ export default function DataEngineerLlmApplicationPost() {
             What a Data Engineer Actually Builds for an LLM Application
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · February 2026 · <span className="text-cyberTeal">6 min read</span>
+            Ryan Kirsch · February 2026 ·{" "}
+            <span className="text-cyberTeal">~6 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             Most AI content focuses on the model. Here is the infrastructure that makes it
@@ -90,10 +91,7 @@ export default function DataEngineerLlmApplicationPost() {
             <h2 className="text-2xl font-semibold text-white">The Data Layer No One Talks About</h2>
             <p className="leading-relaxed">Here is the stack, top to bottom:</p>
             <pre>
-              <code>
-                data source → ingestion pipeline → chunking + embedding → vector store →
-                retrieval layer → LLM → application
-              </code>
+              <code>{`data source → ingestion pipeline → chunking + embedding → vector store → retrieval layer → LLM → application`}</code>
             </pre>
             <p className="leading-relaxed">
               The DE owns everything from &quot;data source&quot; through &quot;retrieval layer.&quot; The
@@ -225,14 +223,12 @@ export default function DataEngineerLlmApplicationPost() {
 
           <section className="space-y-4">
             <h2 className="text-2xl font-semibold text-white">The Stack</h2>
-            <p className="leading-relaxed">
-              Here is what I actually use, without the marketing copy.
-            </p>
+            <p className="leading-relaxed">Here is what I actually use, without the marketing copy.</p>
             <p className="leading-relaxed">
               <strong>Ingestion:</strong> Python with <code className="font-mono text-sm text-cyberTeal">httpx</code> for async API calls,
-              <code className="font-mono text-sm text-cyberTeal">requests</code> when simplicity matters, <code className="font-mono text-sm text-cyberTeal">BeautifulSoup</code> for web sources. Most
-              news content lives behind internal APIs. Some of it is HTML that has to be
-              parsed carefully or you end up embedding navigation menus.
+              <code className="font-mono text-sm text-cyberTeal">requests</code> when simplicity matters, <code className="font-mono text-sm text-cyberTeal">BeautifulSoup</code> for web sources. Most news content
+              lives behind internal APIs. Some of it is HTML that has to be parsed
+              carefully or you end up embedding navigation menus.
             </p>
             <p className="leading-relaxed">
               <strong>Transformation:</strong> <code className="font-mono text-sm text-cyberTeal">dbt</code> for structured source data: analytics tables,
@@ -320,8 +316,8 @@ export default function DataEngineerLlmApplicationPost() {
                 >
                   drills.ryankirsch.dev
                 </a>{" "}
-                covers 25 questions across pipelines, modeling, and LLM infrastructure. Built from
-                real interview loops.
+                covers 25 questions across pipelines, modeling, and LLM infrastructure.
+                Built from real interview loops.
               </em>
             </p>
           </section>
@@ -355,7 +351,7 @@ export default function DataEngineerLlmApplicationPost() {
             <p className="font-semibold text-white">Ryan Kirsch</p>
             <p className="text-sm text-mutedGray mt-1">
               Data Engineer at the Philadelphia Inquirer. Writing about practical data engineering,
-              LLM infrastructure, and systems that scale without a cloud bill.
+              local-first stacks, and systems that scale without a cloud bill.
             </p>
             <Link
               href="/"
