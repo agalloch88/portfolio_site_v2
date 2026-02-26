@@ -12,22 +12,39 @@ export const metadata: Metadata = {
 };
 
 export default function DagsterDbtDuckDbPost() {
+  const postUrl = encodeURIComponent("https://ryankirsch.dev/blog/dagster-dbt-duckdb");
+  const postTitle = encodeURIComponent(
+    "The Local-First Data Stack: Practical Lessons from Dagster, dbt, and DuckDB"
+  );
+
   return (
     <main className="min-h-screen pt-24 pb-16">
       <div className="max-w-2xl mx-auto px-6">
-        <Link
-          href="/"
-          className="inline-flex items-center text-sm text-electricBlue hover:text-white transition-colors"
-        >
-          ← Back to home
-        </Link>
+        <nav className="inline-flex items-center text-sm text-mutedGray">
+          <span className="text-electricBlue">←</span>
+          <Link
+            href="/"
+            className="ml-2 text-electricBlue hover:text-white transition-colors"
+          >
+            Home
+          </Link>
+          <span className="mx-2 text-steel">/</span>
+          <Link
+            href="/blog"
+            className="text-electricBlue hover:text-white transition-colors"
+          >
+            Blog
+          </Link>
+        </nav>
 
         <header className="mt-10">
           <p className="text-sm font-mono text-cyberTeal uppercase tracking-[0.2em]">Blog</p>
           <h1 className="mt-4 text-3xl sm:text-4xl font-bold text-white">
             The Local-First Data Stack: Practical Lessons from Dagster, dbt, and DuckDB
           </h1>
-          <p className="mt-3 text-sm font-mono text-mutedGray">Ryan Kirsch · February 2026</p>
+          <p className="mt-3 text-sm font-mono text-mutedGray">
+            Ryan Kirsch · February 2026 · <span className="text-cyberTeal">8 min read</span>
+          </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             I had three APIs, a laptop, and a genuine question: can you build a
             production-quality data pipeline without a cloud bill? Not a toy. Not a
@@ -218,6 +235,44 @@ export default function DagsterDbtDuckDbPost() {
               stack breaks down at scale, I want to hear it.
             </p>
           </section>
+        </div>
+
+        <div className="mt-10 pt-8 border-t border-steel/30 flex items-center gap-4">
+          <span className="text-sm text-mutedGray">Share:</span>
+          <a
+            href={`https://www.linkedin.com/sharing/share-offsite/?url=${postUrl}`}
+            className="text-sm text-electricBlue hover:text-white transition-colors"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            href={`https://twitter.com/intent/tweet?url=${postUrl}&text=${postTitle}`}
+            className="text-sm text-electricBlue hover:text-white transition-colors"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Twitter/X
+          </a>
+        </div>
+
+        <div className="mt-10 flex flex-col gap-4 rounded-xl border border-steel/30 bg-charcoal/40 p-6 sm:flex-row sm:items-center">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-steel/30 text-sm font-mono text-white">
+            RK
+          </div>
+          <div>
+            <p className="text-sm text-mutedGray">
+              Ryan Kirsch is a backend engineer and data engineer focused on local-first
+              systems, resilient data pipelines, and pragmatic tooling.
+            </p>
+            <Link
+              href="/#projects"
+              className="mt-3 inline-flex text-sm text-electricBlue hover:text-white transition-colors"
+            >
+              View portfolio
+            </Link>
+          </div>
         </div>
 
         <div className="mt-12">
