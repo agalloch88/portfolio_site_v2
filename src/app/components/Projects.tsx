@@ -78,6 +78,14 @@ const projects: Project[] = [
     link: "https://roampage.vercel.app",
   },
   {
+    title: "Interview Drill Pack",
+    description:
+      "Built and launched a paid digital product for data engineering and AI interview preparation. 50 real interview questions with model answers, scoring rubrics, and a 7-day prep plan. Full marketing funnel: landing page with lead magnet email capture, free 10-question guide, and Gumroad checkout integration.",
+    metrics: "Live at drills.ryankirsch.dev · 50 questions · Gumroad checkout",
+    tags: ["Static HTML/CSS", "FormSubmit", "Gumroad", "Vercel", "SEO", "Product Launch"],
+    link: "https://drills.ryankirsch.dev",
+  },
+  {
     title: "TryAngles: BJJ Apparel Brand",
     description:
       "Designed and built the brand identity and landing page for a BJJ lifestyle apparel brand. Includes a custom Stripe-style WebGL FBM shader mesh gradient written in raw GLSL, mobile fallback CSS gradient, and email capture waitlist flow. Zero dependencies for the WebGL effect.",

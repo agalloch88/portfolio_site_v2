@@ -2,13 +2,14 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const links = [
+const links: { label: string; href: string; external?: boolean }[] = [
   { label: "About", href: "#about" },
   { label: "Tech Stack", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
   { label: "Blog", href: "/blog" },
+  { label: "Interview Drills", href: "https://drills.ryankirsch.dev", external: true },
 ];
 
 export default function Navbar() {
@@ -98,9 +99,14 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm text-mutedGray hover:text-white transition-colors duration-300"
+                {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className={`text-sm transition-colors duration-300 ${
+                  l.external
+                    ? "text-electricBlue hover:text-white font-medium"
+                    : "text-mutedGray hover:text-white"
+                }`}
               >
-                {l.label}
+                {l.label}{l.external ? " ↗" : ""}
               </a>
             ))}
           </div>
@@ -132,9 +138,14 @@ export default function Navbar() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block text-sm text-mutedGray hover:text-white transition-colors"
+                {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className={`block text-sm transition-colors ${
+                  l.external
+                    ? "text-electricBlue hover:text-white font-medium"
+                    : "text-mutedGray hover:text-white"
+                }`}
               >
-                {l.label}
+                {l.label}{l.external ? " ↗" : ""}
               </a>
             ))}
           </div>
