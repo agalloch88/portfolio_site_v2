@@ -44,28 +44,28 @@ const projects: Project[] = [
   {
     title: "AI/RAG Historical Archive",
     description:
-      "Built a privately-hosted AI/RAG application over the Philadelphia Inquirer's proprietary historical archive (1977-present), enabling intelligent search and content discovery across decades of journalism.",
+      "The Inquirer's 45-year archive was locked in siloed content systems with no unified search capability, so I designed and deployed a privately-hosted RAG application to surface it. I built an embedding pipeline over 1977-to-present articles, set up a vector retrieval layer, and hosted the inference stack internally to satisfy legal and editorial controls around proprietary content. The result: journalists and editors can now surface decades of institutional knowledge in seconds.",
     metrics: "45+ years of searchable archive • Private hosting",
     tags: ["Python", "OpenAI", "RAG", "Vector DB", "AWS"],
   },
   {
     title: "ETL Pipeline Reengineering",
     description:
-      "Reengineered legacy Informatica ETL pipelines in Python/PySpark, achieving 50% greater resilience and eliminating expensive proprietary tooling.",
+      "Legacy Informatica pipelines were brittle, expensive to maintain, and locked behind proprietary licensing that inflated costs without delivering flexibility. I rewrote the critical paths in Python and PySpark, replacing vendor-owned processes with testable, version-controlled code. The migration delivered 50% better resilience on failure recovery and eliminated the Informatica licensing overhead entirely.",
     metrics: "$120K/year savings • 50% more resilient",
     tags: ["Python", "PySpark", "ETL", "Data Engineering"],
   },
   {
     title: "Internal HR Chatbot",
     description:
-      "Built a Slack-based RAG chatbot using OpenAI API for internal HR queries: employee handbook, PTO policies, org charts, reducing HR ticket volume.",
+      "HR was fielding repetitive questions about PTO, org structure, and policy that consumed significant time and created inconsistent answers. I built a RAG-powered chatbot embedded directly in Slack, indexing the employee handbook, org charts, and policy documents into a vector store backed by the OpenAI API. Employees get authoritative, instant answers without leaving their workflow; HR gets fewer tickets.",
     metrics: "Slack-native • Real-time RAG responses",
     tags: ["OpenAI API", "Slack", "Python", "RAG"],
   },
   {
     title: "Full Stack GRC Platform",
     description:
-      "Designed and built a governance, risk, and compliance platform at Longevity Consulting using React, Django, FastAPI, GraphQL, and AWS FarGate.",
+      "Longevity Consulting's GRC processes were entirely manual, tracked across spreadsheets with no audit trail, no workflow automation, and no visibility across risk domains. I designed and built a full-stack platform with a React front end, Django and FastAPI services, a GraphQL API layer, and containerized deployment on AWS Fargate. The platform gave compliance teams a single source of truth with automated workflows and full audit history.",
     metrics: "Full stack • Enterprise GRC",
     tags: ["React", "Django", "FastAPI", "GraphQL", "AWS FarGate"],
   },
