@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import ParticleBackground from './ParticleBackground';
 
@@ -9,8 +8,6 @@ const headlineWords = ['I', 'build', 'systems', 'that', 'scale.'];
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion();
   const skip = !!prefersReducedMotion;
-  const [streakErrored, setStreakErrored] = useState(false);
-
   const wordVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -88,7 +85,7 @@ export default function Hero() {
           className="text-lg sm:text-xl text-mutedGray max-w-2xl mx-auto mb-10 leading-relaxed"
           {...fadeUp(0.9)}
         >
-          Lead Backend Engineer at the Philadelphia Inquirer.
+          Senior Data Engineer and Lead Backend Engineer at the Philadelphia Inquirer.
           I build data platforms and ETL/ELT pipelines using dbt, Dagster, PySpark, and Airflow,
           alongside cloud infrastructure and AI/ML systems handling millions of requests daily.
         </motion.p>
@@ -111,26 +108,18 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        <motion.p className="text-sm text-steel mt-6" {...fadeUp(1.6)}>
-          Building data pipelines, rolling BJJ, exploring AI
-        </motion.p>
-
-        <motion.div className="max-w-md mx-auto mt-8 min-h-[195px]" {...fadeUp(1.8)}>
-          {!streakErrored ? (
-            <img
-              src="https://streak-stats.demolab.com?user=agalloch88&theme=tokyonight&hide_border=true&background=1a1b26"
-              width={495}
-              height={195}
-              className="w-full max-w-full h-auto"
-              loading="lazy"
-              alt="Ryan Kirsch's GitHub contribution streak statistics"
-              onError={() => setStreakErrored(true)}
-            />
-          ) : (
-            <div className="text-sm text-steel text-center">
-              GitHub streak stats temporarily unavailable
-            </div>
-          )}
+        <motion.div className="max-w-md mx-auto mt-8" {...fadeUp(1.8)}>
+          <div className="flex flex-wrap gap-2 mt-3">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono border border-electricBlue/30 bg-electricBlue/10 text-electricBlue">
+              💰 $220K+ cost savings
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono border border-electricBlue/30 bg-electricBlue/10 text-electricBlue">
+              📰 1M+ daily readers
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono border border-electricBlue/30 bg-electricBlue/10 text-electricBlue">
+              ☁️ 3 AWS certs
+            </span>
+          </div>
         </motion.div>
       </div>
     </section>

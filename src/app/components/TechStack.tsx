@@ -5,14 +5,32 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 
 const categories = [
   {
-    title: "Languages & Engineering",
+    title: "Data Engineering",
     description: "Core stack",
-    items: ["Python", "TypeScript", "JavaScript", "React", "Node.js", "FastAPI", "PostgreSQL", "Redis"],
+    items: [
+      "dbt",
+      "Dagster",
+      "Apache Kafka",
+      "Apache Spark / PySpark",
+      "DuckDB",
+      "Snowflake",
+      "BigQuery",
+      "Apache Airflow",
+    ],
   },
   {
-    title: "Cloud, Data & AI",
+    title: "Cloud & AI",
     description: "Platforms & pipelines",
-    items: ["AWS", "GCP", "Docker", "Kubernetes", "BigQuery", "PySpark", "OpenAI API", "GraphQL"],
+    items: [
+      "AWS",
+      "GCP",
+      "Python",
+      "OpenAI API",
+      "Docker",
+      "Kubernetes",
+      "PostgreSQL",
+      "Redis",
+    ],
   },
 ];
 
