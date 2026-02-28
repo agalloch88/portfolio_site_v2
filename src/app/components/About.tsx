@@ -33,13 +33,13 @@ export default function About() {
             My focus now is data engineering and <span className="tech-term">AI/ML</span> infrastructure: building the pipelines, platforms, and systems that power intelligent applications.
           </p>
 
-          <div className="grid grid-cols-3 gap-4 sm:gap-6 py-2">
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 py-2" aria-label="Career highlights">
             <div className="text-center">
               <div className="text-2xl sm:text-3xl font-bold text-electricBlue font-mono">$220K+</div>
               <div className="text-xs sm:text-sm text-steel mt-1">Pipeline cost savings shipped</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-electricBlue font-mono">Millions</div>
+              <div className="text-2xl sm:text-3xl font-bold text-electricBlue font-mono">1M+</div>
               <div className="text-xs sm:text-sm text-steel mt-1">Daily readers served</div>
             </div>
             <div className="text-center">
