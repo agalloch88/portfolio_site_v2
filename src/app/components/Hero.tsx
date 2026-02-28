@@ -106,6 +106,13 @@ export default function Hero() {
           >
             Get In Touch
           </a>
+          <a
+            href="/ryan-kirsch-data-engineer-resume.pdf"
+            download
+            className="px-8 py-3 border border-steel/40 text-steel font-semibold rounded-lg hover:border-electricBlue/50 hover:text-electricBlue transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-electricBlue focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
+          >
+            Download Resume ↓
+          </a>
         </motion.div>
 
         <motion.div className="max-w-md mx-auto mt-8" {...fadeUp(1.8)}>

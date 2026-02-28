@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const links: { label: string; href: string; external?: boolean }[] = [
+const links: { label: string; href: string; external?: boolean; download?: boolean }[] = [
   { label: "About", href: "#about" },
   { label: "Tech Stack", href: "#skills" },
   { label: "Projects", href: "#projects" },
@@ -10,6 +10,7 @@ const links: { label: string; href: string; external?: boolean }[] = [
   { label: "Contact", href: "#contact" },
   { label: "Blog", href: "/blog" },
   { label: "Interview Drills", href: "https://drills.ryankirsch.dev", external: true },
+  { label: "Resume", href: "/ryan-kirsch-data-engineer-resume.pdf", download: true, external: true },
 ];
 
 export default function Navbar() {
@@ -99,14 +100,17 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                {...(l.external && !l.download ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                {...(l.download ? { download: true } : {})}
                 className={`text-sm transition-colors duration-300 ${
-                  l.external
+                  l.label === "Resume"
+                    ? "px-3 py-1.5 border border-electricBlue/50 text-electricBlue hover:bg-electricBlue/10 rounded font-medium"
+                    : l.external
                     ? "text-electricBlue hover:text-white font-medium"
                     : "text-mutedGray hover:text-white"
                 }`}
               >
-                {l.label}{l.external ? " ↗" : ""}
+                {l.label}{l.download ? " ↓" : l.external ? " ↗" : ""}
               </a>
             ))}
           </div>
@@ -138,14 +142,15 @@ export default function Navbar() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                {...(l.external && !l.download ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                {...(l.download ? { download: true } : {})}
                 className={`block text-sm transition-colors ${
                   l.external
                     ? "text-electricBlue hover:text-white font-medium"
                     : "text-mutedGray hover:text-white"
                 }`}
               >
-                {l.label}{l.external ? " ↗" : ""}
+                {l.label}{l.download ? " ↓" : l.external ? " ↗" : ""}
               </a>
             ))}
           </div>
