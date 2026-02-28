@@ -8,6 +8,13 @@ export const metadata = {
 
 const posts = [
   {
+    title: "Building an LLM-Ready Data Pipeline with Kafka, DuckDB, and pgvector",
+    href: "/blog/llm-ready-pipeline",
+    date: "February 2026",
+    teaser:
+      "Most data teams build pipelines to feed dashboards. AI applications need something different. Here is the architecture, the tradeoffs, and what I would do differently.",
+  },
+  {
     title: "What a Data Engineer Actually Builds for an LLM Application",
     href: "/blog/data-engineer-llm-application",
     date: "February 2026",
