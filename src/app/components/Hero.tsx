@@ -27,7 +27,7 @@ export default function Hero() {
         };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 px-4 hero-gradient">
+    <section className="relative min-h-screen flex items-center justify-center pt-16 px-4 hero-gradient overflow-hidden">
       {/* Meng To aura orbs */}
       <div className="aura-orb aura-orb-1" aria-hidden="true" />
       <div className="aura-orb aura-orb-2" aria-hidden="true" />
@@ -109,7 +109,7 @@ export default function Hero() {
           <a
             href="/ryan-kirsch-data-engineer-resume.pdf"
             download
-            className="px-8 py-3 border border-steel/40 text-steel font-semibold rounded-lg hover:border-electricBlue/50 hover:text-electricBlue transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-electricBlue focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
+            className="px-8 py-3 border border-electricBlue text-electricBlue font-semibold rounded-lg hover:bg-electricBlue/10 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-electricBlue focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
           >
             Download Resume ↓
           </a>
