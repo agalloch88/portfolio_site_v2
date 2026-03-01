@@ -78,8 +78,9 @@ export default function Contact() {
           className="w-full text-left bg-charcoal border border-electricBlue/10 rounded-xl p-6 mb-8"
         >
           <input type="hidden" name="_subject" value={subject} />
-          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_captcha" value="true" />
           <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
           <div className="flex flex-col gap-4">
             <label className="text-sm text-lightGray">
