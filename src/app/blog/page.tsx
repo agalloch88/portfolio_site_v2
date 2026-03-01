@@ -3,6 +3,18 @@ import Link from "next/link";
 export const metadata = {
   title: "Blog | Ryan Kirsch",
   description: "Writing on data engineering, local-first stacks, and pragmatic infrastructure choices.",
+  openGraph: {
+    title: "Blog | Ryan Kirsch",
+    description: "Writing on data engineering, local-first stacks, and pragmatic infrastructure choices.",
+    type: "website",
+    url: "https://ryankirsch.dev/blog",
+    siteName: "Ryan Kirsch",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Ryan Kirsch",
+    description: "Writing on data engineering, local-first stacks, and pragmatic infrastructure choices.",
+  },
   alternates: { canonical: "/blog" },
 };
 

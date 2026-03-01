@@ -57,7 +57,7 @@ export default function DataEngineerLlmApplicationPost() {
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
             Ryan Kirsch · February 2026 ·{" "}
-            <span className="text-cyberTeal">~6 min read</span>
+            <span className="text-cyberTeal">6 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             Most AI content focuses on the model. Here is the infrastructure that makes it

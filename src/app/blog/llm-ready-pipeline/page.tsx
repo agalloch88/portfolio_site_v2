@@ -229,34 +229,52 @@ export default function LlmReadyPipelinePost() {
           </section>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-steel/30">
-          <p className="text-sm text-mutedGray mb-4">Share this post:</p>
-          <div className="flex gap-4">
-            <a
-              href={`https://twitter.com/intent/tweet?text=${postTitle}&url=${postUrl}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-electricBlue hover:text-white transition-colors font-mono"
+        <div className="mt-10 pt-8 border-t border-steel/30 flex items-center gap-4">
+          <span className="text-sm text-mutedGray font-mono">Share:</span>
+          <a
+            href={`https://www.linkedin.com/sharing/share-offsite/?url=${postUrl}`}
+            className="text-sm text-electricBlue hover:text-white transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            href={`https://twitter.com/intent/tweet?text=${postTitle}&url=${postUrl}`}
+            className="text-sm text-electricBlue hover:text-white transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Twitter/X
+          </a>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-steel/30 flex gap-4 items-start">
+          <div className="w-12 h-12 rounded-full bg-electricBlue/20 border border-electricBlue/30 flex items-center justify-center text-electricBlue font-bold flex-shrink-0 text-sm">
+            RK
+          </div>
+          <div>
+            <p className="font-semibold text-white">Ryan Kirsch</p>
+            <p className="text-sm text-mutedGray mt-1">
+              Data Engineer at the Philadelphia Inquirer. Writing about practical data engineering,
+              local-first stacks, and systems that scale without a cloud bill.
+            </p>
+            <Link
+              href="/"
+              className="text-sm text-electricBlue hover:text-white transition-colors mt-2 inline-block"
             >
-              Share on X →
-            </a>
-            <a
-              href={`https://www.linkedin.com/sharing/share-offsite/?url=${postUrl}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-electricBlue hover:text-white transition-colors font-mono"
-            >
-              Share on LinkedIn →
-            </a>
+              View portfolio →
+            </Link>
           </div>
         </div>
 
-        <div className="mt-8">
-          <Link
-            href="/blog"
-            className="text-sm text-electricBlue hover:text-white transition-colors font-mono"
-          >
-            ← Back to blog
+        <div className="mt-12 text-sm text-electricBlue">
+          <Link href="/" className="hover:text-white transition-colors">
+            ← Home
+          </Link>
+          <span className="text-steel"> / </span>
+          <Link href="/blog" className="hover:text-white transition-colors">
+            Blog
           </Link>
         </div>
       </div>
