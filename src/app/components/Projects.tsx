@@ -16,9 +16,9 @@ const projects: Project[] = [
   {
     title: "Health & Activity Analytics Pipeline",
     description:
-      "Personal health data was fragmented across wearables, coding activity, and environmental signals, so I unified it into a single analytical flow. I built a Dagster-orchestrated ELT on DuckDB with a dbt Core medallion model, pulling from Oura, GitHub, and OpenWeatherMap. The result was 17 data quality tests and a Streamlit view that surfaced clear wellness and productivity correlations.",
-    metrics: "3 live APIs • 17 dbt tests • Medallion architecture",
-    tags: ["Dagster", "dbt Core", "DuckDB", "Python", "Streamlit"],
+      "Designed a production-grade data platform architecture around asset-centric orchestration, then directed AI tooling to build within it. I architected the medallion model (Bronze/Silver/Gold), defined data quality contracts via Great Expectations, and established Kafka streaming patterns. The result: a documented human-in-the-loop workflow where architectural decisions are mine and mechanical implementation is AI-directed. 17 passing dbt tests, 3 validated GX suites, real-time streaming extension via Kafka.",
+    metrics: "3 live APIs • 17 dbt tests • 3 GX suites • Kafka streaming",
+    tags: ["Dagster", "dbt Core", "DuckDB", "Great Expectations", "Kafka", "AI-Directed Workflow"],
     link: "https://github.com/agalloch88/data-pipeline",
     diagram:
       "graph LR; Oura/GitHub/OpenWeatherMap -> Dagster Orchestration -> DuckDB Bronze -> Silver -> Gold -> dbt Core Transforms -> Streamlit Dashboard.",
