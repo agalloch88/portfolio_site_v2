@@ -20,6 +20,22 @@ export const metadata = {
 
 const posts = [
   {
+    title: "Data Lineage in Practice: How to Know What Breaks When You Change a Model",
+    href: "/blog/data-lineage-in-practice",
+    date: "March 27, 2026",
+    tags: ["Data Lineage", "Governance", "dbt", "Impact Analysis", "Metadata"],
+    teaser:
+      "Why lineage matters long before an auditor asks for it: table-level vs. column-level lineage, how dbt lineage helps, where lineage metadata really comes from, and how impact analysis changes code review and incident response.",
+  },
+  {
+    title: "ETL vs ELT in Practice: When Each Pattern Actually Makes Sense",
+    href: "/blog/etl-vs-elt-in-practice",
+    date: "March 27, 2026",
+    tags: ["ETL", "ELT", "Architecture", "Data Warehousing", "CDC"],
+    teaser:
+      "ETL still wins in some places, ELT wins in many others, and most real platforms use both. A practical guide to where transformations should happen based on compliance, cost, debuggability, warehouse economics, and workload type.",
+  },
+  {
     title: "How to Ace Data Engineering Interviews: SQL, System Design, and Behavioral",
     href: "/blog/data-engineering-interviews",
     date: "March 27, 2026",
