@@ -20,6 +20,23 @@ export const metadata = {
 
 const posts = [
   {
+    title:
+      "Cost-Efficient Data Engineering: How to Spend Less on Infrastructure Without Sacrificing Reliability",
+    href: "/blog/cost-efficient-data-engineering",
+    date: "March 27, 2026",
+    tags: ["Cost Optimization", "Warehousing", "FinOps", "dbt", "Infrastructure"],
+    teaser:
+      "A pragmatic cost playbook: right-size warehouses with auto-suspend, move cold data to Iceberg + S3, use spot instances for Spark, avoid runaway SELECT *, monitor spend spikes, and build a cost-per-insight culture that keeps reliability intact.",
+  },
+  {
+    title: "Kafka for Data Engineers: Production Patterns That Actually Matter",
+    href: "/blog/kafka-production-patterns",
+    date: "March 27, 2026",
+    tags: ["Kafka", "Streaming", "Data Engineering", "Reliability", "Operations"],
+    teaser:
+      "The production Kafka patterns that keep pipelines boring: producer/consumer lifecycle, delivery semantics, rebalancing, partition key strategy, offset management, schema registry with Avro, compacted topics, and the Kafka vs Kinesis decision.",
+  },
+  {
     title: "SQL Window Functions: The Complete Guide for Data Engineers",
     href: "/blog/sql-window-functions-guide",
     date: "March 27, 2026",
