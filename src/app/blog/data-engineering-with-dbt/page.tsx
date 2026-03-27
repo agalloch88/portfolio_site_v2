@@ -250,7 +250,7 @@ jobs:
                     --defer --state ./prod_artifacts
         env:
           DBT_TARGET: ci
-          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}`}
+          SNOWFLAKE_ACCOUNT: ${"$"}{{ secrets.SNOWFLAKE_ACCOUNT }}`}
           </pre>
           <p>
             The <code>--defer</code> flag and <code>--state</code> reference allow the CI run to use production artifacts for models that did not change, avoiding rebuilding the entire project on every PR.

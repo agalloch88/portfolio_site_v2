@@ -20,6 +20,22 @@ export const metadata = {
 
 const posts = [
   {
+    title: "How to Ace Data Engineering Interviews: SQL, System Design, and Behavioral",
+    href: "/blog/data-engineering-interviews",
+    date: "March 27, 2026",
+    tags: ["Career", "Interviews", "SQL", "System Design", "Negotiation"],
+    teaser:
+      "What data engineering interviews actually test: practical SQL (window functions, SCD Type 2, gap-and-island), system design tradeoffs for pipelines and warehouses, behavioral questions that reveal engineering judgment, and how to negotiate the offer once you get it.",
+  },
+  {
+    title: "Building Streaming Data Pipelines: Flink, Spark Streaming, and Kafka Streams",
+    href: "/blog/streaming-data-pipelines",
+    date: "March 27, 2026",
+    tags: ["Streaming", "Flink", "Spark", "Kafka", "Data Pipelines"],
+    teaser:
+      "When streaming is actually worth the complexity, how Flink differs from Spark Structured Streaming and Kafka Streams, and the patterns that matter in production: watermarks, late data, checkpointing, state size, and framework selection by latency and workload.",
+  },
+  {
     title: "The Soft Skills That Make Data Engineers Irreplaceable",
     href: "/blog/data-engineer-soft-skills",
     date: "March 27, 2026",
