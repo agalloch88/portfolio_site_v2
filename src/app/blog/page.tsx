@@ -20,6 +20,22 @@ export const metadata = {
 
 const posts = [
   {
+    title: "SQL Window Functions: The Complete Guide for Data Engineers",
+    href: "/blog/sql-window-functions-guide",
+    date: "March 27, 2026",
+    tags: ["SQL", "Window Functions", "Analytics", "Data Engineering", "Sessionization"],
+    teaser:
+      "The complete window function guide: ROW_NUMBER, RANK, LAG/LEAD, running aggregates, frame syntax, sessionization with time gaps, gaps-and-islands, NTILE, FIRST_VALUE/LAST_VALUE, and performance considerations that matter in production.",
+  },
+  {
+    title: "Building Internal Data Tools: When to Build, When to Buy, and How to Ship",
+    href: "/blog/building-internal-data-tools",
+    date: "March 27, 2026",
+    tags: ["Internal Tools", "Engineering", "Streamlit", "Build vs Buy", "Data Products"],
+    teaser:
+      "When internal data tools create compounding leverage vs. when they become abandoned dashboards. The buy-first rule, maintenance reality checks, stack choices, shipping lean, and the four ways most internal tools die.",
+  },
+  {
     title: "Analytics Engineering Playbook: Modeling, Testing, and Earning Trust",
     href: "/blog/analytics-engineering-playbook",
     date: "March 27, 2026",
