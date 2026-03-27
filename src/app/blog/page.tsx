@@ -20,6 +20,22 @@ export const metadata = {
 
 const posts = [
   {
+    title: "Data Contracts in Practice: How to Stop Breaking Downstream Teams",
+    href: "/blog/data-contracts-in-practice",
+    date: "March 27, 2026",
+    tags: ["Data Contracts", "Governance", "Schema", "Ownership", "Freshness"],
+    teaser:
+      "Why most downstream breakages are really interface failures, and how to use lightweight data contracts to make schema, freshness, ownership, and change policies explicit without turning the data team into process police.",
+  },
+  {
+    title: "Data Warehouse Migration Playbook: How to Move Without Breaking Everything",
+    href: "/blog/warehouse-migration-playbook",
+    date: "March 27, 2026",
+    tags: ["Migration", "Warehousing", "Cutover", "Validation", "Platform"],
+    teaser:
+      "Warehouse migrations are trust migrations too. A practical playbook for dual-running, validation, schema compatibility, consumer cutover, cost/performance checks, and keeping stakeholder confidence intact while the platform moves.",
+  },
+  {
     title: "Data Reliability Engineering: The Missing Discipline Between Pipelines and Trust",
     href: "/blog/data-reliability-engineering",
     date: "March 27, 2026",
