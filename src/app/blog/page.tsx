@@ -20,6 +20,22 @@ export const metadata = {
 
 const posts = [
   {
+    title: "Data Reliability Engineering: The Missing Discipline Between Pipelines and Trust",
+    href: "/blog/data-reliability-engineering",
+    date: "March 27, 2026",
+    tags: ["Reliability", "SLOs", "Observability", "Incidents", "Trust"],
+    teaser:
+      "Why data failures are really trust failures, and how to borrow from SRE without getting ceremonial about it: freshness, completeness, correctness, consistency, SLOs, incident response, and the operational habits that keep stakeholders from losing faith in the platform.",
+  },
+  {
+    title: "Reverse ETL: How to Move Warehouse Data Back Into the Business",
+    href: "/blog/reverse-etl-guide",
+    date: "March 27, 2026",
+    tags: ["Reverse ETL", "Activation", "Salesforce", "Operations", "Data Products"],
+    teaser:
+      "Reverse ETL is where analytics becomes operational leverage, if the fields are trustworthy. How to design publish models, define destination ownership, set sync reliability expectations, and avoid spraying unstable scores into operational systems.",
+  },
+  {
     title: "Data Lineage in Practice: How to Know What Breaks When You Change a Model",
     href: "/blog/data-lineage-in-practice",
     date: "March 27, 2026",
