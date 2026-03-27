@@ -20,6 +20,22 @@ export const metadata = {
 
 const posts = [
   {
+    title: "Analytics Engineering Playbook: Modeling, Testing, and Earning Trust",
+    href: "/blog/analytics-engineering-playbook",
+    date: "March 27, 2026",
+    tags: ["Analytics Engineering", "dbt", "Modeling", "Testing", "Semantics"],
+    teaser:
+      "A practical playbook for analytics engineering: layered model design, tests that matter, semantic clarity, stakeholder alignment, and why dashboard trust is usually won or lost in the modeling layer below the BI tool.",
+  },
+  {
+    title: "Modern Data Stack Lessons: What Actually Holds Up After the Hype",
+    href: "/blog/modern-data-stack-lessons",
+    date: "March 27, 2026",
+    tags: ["Modern Data Stack", "Strategy", "Warehousing", "dbt", "Tooling"],
+    teaser:
+      "What the modern data stack got right, where modularity created more seams than leverage, and the smaller, more durable tool patterns that still hold up after the hype cycle cooled off.",
+  },
+  {
     title: "Data Contracts in Practice: How to Stop Breaking Downstream Teams",
     href: "/blog/data-contracts-in-practice",
     date: "March 27, 2026",
