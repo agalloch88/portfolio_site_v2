@@ -20,6 +20,14 @@ export const metadata = {
 
 const posts = [
   {
+    title: "Designing Data Systems That Don't Break: Lessons from DDIA",
+    href: "/blog/ddia-data-systems-design",
+    date: "March 28, 2026",
+    tags: ["DDIA", "System Design", "Architecture", "Kafka", "Data Engineering"],
+    teaser:
+      "A practical DDIA guide for senior/staff data engineering interviews: reliability, scalability, maintainability, replication, partitioning strategy, consistency in data lakes, and Netflix-style system design prompts.",
+  },
+  {
     title: "Real-Time Data Engineering: Kafka, Flink, and the Stream Processing Stack",
     href: "/blog/real-time-data-engineering-kafka-flink",
     date: "March 28, 2026",
