@@ -20,6 +20,14 @@ export const metadata = {
 
 const posts = [
   {
+    title: "Data Vault 2.0: The Modeling Methodology Behind Netflix-Scale Warehouses",
+    href: "/blog/data-vault-2-methodology",
+    date: "March 28, 2026",
+    tags: ["Data Vault", "dbt", "Data Modeling", "Warehousing", "Architecture"],
+    teaser:
+      "A senior data engineer's guide to Data Vault 2.0: why it exists, how hubs, links, and satellites work, how history is captured natively, and how to implement it with dbt at scale.",
+  },
+  {
     title: "Designing Data Systems That Don't Break: Lessons from DDIA",
     href: "/blog/ddia-data-systems-design",
     date: "March 28, 2026",
