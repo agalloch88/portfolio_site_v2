@@ -20,6 +20,22 @@ export const metadata = {
 
 const posts = [
   {
+    title: "Data Engineering Career Mistakes (And How to Avoid Them)",
+    href: "/blog/data-engineering-career-mistakes",
+    date: "March 27, 2026",
+    tags: ["Career", "Growth", "Data Engineering", "Leadership", "Mindset"],
+    teaser:
+      "The patterns that keep skilled engineers stuck at mid-level: measuring progress in tools not outcomes, treating communication as optional, shipping without owning, and confusing complexity with quality. Plus the shifts that break through.",
+  },
+  {
+    title: "Databricks for Data Engineers: What You Need to Know",
+    href: "/blog/databricks-for-data-engineers",
+    date: "March 27, 2026",
+    tags: ["Databricks", "Delta Lake", "Spark", "Streaming", "Unity Catalog"],
+    teaser:
+      "A practical guide to Databricks: Delta Lake ACID transactions and time travel, Unity Catalog three-level namespacing and lineage, Structured Streaming with Auto Loader, SQL Warehouses for dbt, and when Databricks is the right choice versus a warehouse.",
+  },
+  {
     title:
       "Cost-Efficient Data Engineering: How to Spend Less on Infrastructure Without Sacrificing Reliability",
     href: "/blog/cost-efficient-data-engineering",
@@ -683,6 +699,22 @@ const posts = [
     date: "February 2026",
     teaser:
       "A production-quality pipeline on a laptop: why Dagster's asset model, dbt's tests, and DuckDB's speed make a local-first stack feel serious.",
+  },
+  {
+    title: "dbt Macros: The Power Feature Most Engineers Underuse",
+    href: "/blog/dbt-macros-guide",
+    date: "March 28, 2026",
+    tags: ["dbt", "Data Engineering", "SQL", "Analytics Engineering"],
+    teaser:
+      "A practical guide to dbt macros for mid-to-senior engineers: when to use them over models, cross-database compatibility patterns, generic tests, utility macros, and the mistakes that cost teams time.",
+  },
+  {
+    title: "Data Engineering With DuckDB: Fast Local Analytics Without the Cloud",
+    href: "/blog/duckdb-local-analytics",
+    date: "March 28, 2026",
+    tags: ["DuckDB", "Data Engineering", "Local Dev", "Analytics"],
+    teaser:
+      "DuckDB is the fastest path from a CSV to a query result you will find anywhere. What it is, when to use it, and how it compares to Pandas, Spark, and BigQuery for real engineering work.",
   },
 ];
 
