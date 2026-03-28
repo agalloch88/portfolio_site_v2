@@ -20,6 +20,14 @@ export const metadata = {
 
 const posts = [
   {
+    title: "Apache Arrow and the Columnar Revolution: Why Every Data Engineer Needs to Know It",
+    href: "/blog/apache-arrow-columnar-data-format",
+    date: "March 28, 2026",
+    tags: ["Apache Arrow", "Columnar", "Analytics", "Performance", "Data Engineering"],
+    teaser:
+      "Arrow is the in-memory columnar format behind Polars, DuckDB, and modern analytics engines. What it is, why it is fast, how Flight moves data, and why senior interviews expect you to know it.",
+  },
+  {
     title: "Data Vault 2.0: The Modeling Methodology Behind Netflix-Scale Warehouses",
     href: "/blog/data-vault-2-methodology",
     date: "March 28, 2026",
