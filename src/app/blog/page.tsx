@@ -20,6 +20,14 @@ export const metadata = {
 
 const posts = [
   {
+    title: "Real-Time Data Engineering: Kafka, Flink, and the Stream Processing Stack",
+    href: "/blog/real-time-data-engineering-kafka-flink",
+    date: "March 28, 2026",
+    tags: ["kafka", "flink", "streaming", "real-time", "data-engineering", "spark"],
+    teaser:
+      "Why batch no longer meets the bar: Kafka fundamentals for data engineers, choosing between Flink, Spark Structured Streaming, and Kafka Streams, and the production-grade lakehouse pattern that keeps real-time pipelines reliable.",
+  },
+  {
     title: "Data Engineering Career Mistakes (And How to Avoid Them)",
     href: "/blog/data-engineering-career-mistakes",
     date: "March 27, 2026",
