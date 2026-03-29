@@ -733,6 +733,22 @@ const posts = [
       "A production-quality pipeline on a laptop: why Dagster's asset model, dbt's tests, and DuckDB's speed make a local-first stack feel serious.",
   },
   {
+    title: "Data Lakehouse Architecture: When to Use It and How to Build One",
+    href: "/blog/data-lakehouse-architecture",
+    date: "March 29, 2026",
+    tags: ["Data Lakehouse", "Delta Lake", "Iceberg", "Medallion Architecture", "Data Engineering"],
+    teaser:
+      "A practical guide to data lakehouse architecture: Delta Lake vs. Iceberg vs. Hudi, medallion patterns, when a lakehouse beats a warehouse, and hands-on patterns with DuckDB and Spark.",
+  },
+  {
+    title: "Airflow vs. Dagster: A Data Engineer's Practical Comparison",
+    href: "/blog/airflow-vs-dagster-comparison",
+    date: "March 29, 2026",
+    tags: ["Airflow", "Dagster", "Orchestration", "Data Engineering", "Testing"],
+    teaser:
+      "A hands-on comparison from someone who uses Dagster daily and has run Airflow in production: DAG authoring, observability, testing support, the asset model difference, and when to pick each.",
+  },
+  {
     title: "dbt Macros: The Power Feature Most Engineers Underuse",
     href: "/blog/dbt-macros-guide",
     date: "March 28, 2026",
