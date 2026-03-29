@@ -56,7 +56,7 @@ export default function KafkaProductionPatternsPost() {
             Kafka for Data Engineers: Production Patterns That Actually Matter
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 · <span className="text-cyberTeal">10-12 min read</span>
+            Ryan Kirsch · March 16, 2026 · <span className="text-cyberTeal">10-12 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             Kafka is easy to demo and deceptively hard to run well. The difference

@@ -62,7 +62,7 @@ export default function MedallionArchitecturePost() {
             Layers
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 ·{" "}
+            Ryan Kirsch · November 24, 2025 ·{" "}
             <span className="text-cyberTeal">9 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">

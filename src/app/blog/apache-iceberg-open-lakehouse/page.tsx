@@ -72,7 +72,7 @@ export default function ApacheIcebergOpenLakehousePost() {
             to Know It in 2026
           </h1>
           <p className="mt-4 text-mutedGray text-sm font-mono">
-            March 2026 · 9 min read
+            November 2, 2025 · 9 min read
           </p>
         </div>
 

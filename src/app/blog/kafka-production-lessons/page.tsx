@@ -56,7 +56,7 @@ export default function KafkaProductionLessonsPost() {
             Kafka in Production: Lessons from Running Real-Time Pipelines at Scale
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 · <span className="text-cyberTeal">9 min read</span>
+            Ryan Kirsch · October 15, 2025 · <span className="text-cyberTeal">9 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             After three years running Kafka at a major news publisher — millions of

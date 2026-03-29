@@ -61,7 +61,7 @@ export default function AirflowProductionPost() {
             Apache Airflow in Production: Lessons from Running It at Scale
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 ·{" "}
+            Ryan Kirsch · December 12, 2025 ·{" "}
             <span className="text-cyberTeal">10 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">

@@ -79,7 +79,7 @@ export default function AzureDataEngineersGuidePost() {
             Microsoft Cloud Data Stack
           </h1>
           <p className="mt-4 text-mutedGray text-sm font-mono">
-            March 26, 2026 &middot; ~12 min read
+            November 10, 2025 &middot; ~12 min read
           </p>
         </div>
 

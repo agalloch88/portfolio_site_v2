@@ -65,7 +65,7 @@ export default function PySparkPatternsPost() {
             Production Patterns
           </h1>
           <p className="mt-4 text-mutedGray text-sm font-mono">
-            March 2026 · 9 min read
+            October 19, 2025 · 9 min read
           </p>
         </div>
 

@@ -71,7 +71,7 @@ export default function TerraformDataEngineersPost() {
             Terraform for Data Engineers: Managing Infrastructure as Code
           </h1>
           <p className="mt-4 text-mutedGray text-sm font-mono">
-            March 27, 2026 &middot; 8 min read
+            November 14, 2025 &middot; 8 min read
           </p>
         </div>
 

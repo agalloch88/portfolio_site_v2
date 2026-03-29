@@ -54,7 +54,7 @@ export default function DbtInProductionPost() {
             dbt in Production: Testing, CI/CD, and the Medallion Architecture
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 · <span className="text-cyberTeal">8 min read</span>
+            Ryan Kirsch · October 17, 2025 · <span className="text-cyberTeal">8 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             Most teams stop at a handful of dbt models and call it a project. I did the

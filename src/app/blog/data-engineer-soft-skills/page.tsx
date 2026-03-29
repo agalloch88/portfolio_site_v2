@@ -51,7 +51,7 @@ export default function DEsoftSkillsPost() {
             The Soft Skills That Make Data Engineers Irreplaceable
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 · <span className="text-cyberTeal">7 min read</span>
+            Ryan Kirsch · February 20, 2026 · <span className="text-cyberTeal">7 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             Technical skills are the floor. They get you in the room. What determines whether you

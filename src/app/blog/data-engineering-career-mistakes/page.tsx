@@ -10,7 +10,7 @@ export default function DataEngineeringCareerMistakes() {
   return (
     <article className="max-w-3xl mx-auto px-4 py-12">
       <header className="mb-10">
-        <div className="text-sm text-gray-500 mb-3">March 27, 2026 · 10 min read</div>
+        <div className="text-sm text-gray-500 mb-3">March 22, 2026 · 10 min read</div>
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           Data Engineering Career Mistakes (And How to Avoid Them)
         </h1>

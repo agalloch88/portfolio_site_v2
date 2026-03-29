@@ -40,7 +40,7 @@ export default function DdiaDataSystemsDesignPost() {
             <span className="text-xs font-medium bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full">
               Architecture
             </span>
-            <span className="text-sm text-gray-500">March 28, 2026</span>
+            <span className="text-sm text-gray-500">March 25, 2026</span>
             <span className="text-sm text-gray-500">11 min read</span>
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">

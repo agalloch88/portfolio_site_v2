@@ -54,7 +54,7 @@ export default function LlmReadyPipelinePost() {
             Building an LLM-Ready Data Pipeline with Kafka, DuckDB, and pgvector
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · February 2026 · <span className="text-cyberTeal">9 min read</span>
+            Ryan Kirsch · October 12, 2025 · <span className="text-cyberTeal">9 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             Most data teams build pipelines to feed dashboards. AI applications need

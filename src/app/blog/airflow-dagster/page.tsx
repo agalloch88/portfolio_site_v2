@@ -54,7 +54,7 @@ export default function AirflowDagsterPost() {
             Airflow vs. Dagster: Lessons From Running Both in Production
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 · <span className="text-cyberTeal">7 min read</span>
+            Ryan Kirsch · October 20, 2025 · <span className="text-cyberTeal">7 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             I started with Airflow, like most teams do. It was the default choice when

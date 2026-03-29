@@ -54,7 +54,7 @@ export default function DagsterDbtDuckDbPost() {
             The Local-First Data Stack: Practical Lessons from Dagster, dbt, and DuckDB
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · February 2026 · <span className="text-cyberTeal">8 min read</span>
+            Ryan Kirsch · October 8, 2025 · <span className="text-cyberTeal">8 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             I had three APIs, a laptop, and a genuine question: can you build a

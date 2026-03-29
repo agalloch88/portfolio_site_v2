@@ -35,7 +35,7 @@ export default function DataLineageInPracticePost() {
         <header className="mb-10">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-xs font-medium bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full">Governance</span>
-            <span className="text-sm text-gray-500">March 27, 2026</span>
+            <span className="text-sm text-gray-500">February 27, 2026</span>
             <span className="text-sm text-gray-500">9 min read</span>
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">

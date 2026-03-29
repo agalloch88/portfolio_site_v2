@@ -76,7 +76,7 @@ export default function StreamProcessingApacheFlinkPost() {
             Modern Data Engineer
           </h1>
           <p className="mt-4 text-mutedGray text-sm font-mono">
-            March 26, 2026 &middot; 10 min read
+            November 16, 2025 &middot; 10 min read
           </p>
         </div>
 

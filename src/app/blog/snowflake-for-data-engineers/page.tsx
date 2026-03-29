@@ -80,7 +80,7 @@ export default function SnowflakeForDataEngineersPost() {
             Airflow.
           </p>
           <p className="mt-3 text-mutedGray text-sm font-mono">
-            March 26, 2026 · 12 min read · By Ryan Kirsch
+            November 17, 2025 · 12 min read · By Ryan Kirsch
           </p>
         </div>
 

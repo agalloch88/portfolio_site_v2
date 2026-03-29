@@ -56,7 +56,7 @@ export default function DataEngineerLlmApplicationPost() {
             What a Data Engineer Actually Builds for an LLM Application
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · February 2026 ·{" "}
+            Ryan Kirsch · October 10, 2025 ·{" "}
             <span className="text-cyberTeal">6 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">

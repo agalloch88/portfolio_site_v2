@@ -50,7 +50,7 @@ export default function SQLPipelinesPost() {
             Writing SQL for Data Pipelines: Patterns That Scale
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 · <span className="text-cyberTeal">10 min read</span>
+            Ryan Kirsch · February 18, 2026 · <span className="text-cyberTeal">10 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             Pipeline SQL has different constraints than analytical SQL. It runs on a schedule, gets called

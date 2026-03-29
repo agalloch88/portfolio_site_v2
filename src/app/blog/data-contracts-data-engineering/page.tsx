@@ -56,7 +56,7 @@ export default function DataContractsPost() {
             Data Contracts: Enforcing Trust Across Your Data Pipeline in 2026
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 · <span className="text-cyberTeal">11 min read</span>
+            Ryan Kirsch · November 21, 2025 · <span className="text-cyberTeal">11 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             I build data platforms that have to survive constant change: upstream product

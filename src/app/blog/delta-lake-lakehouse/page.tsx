@@ -67,7 +67,7 @@ export default function DeltaLakeLakehousePost() {
             Needs to Know
           </h1>
           <p className="mt-4 text-mutedGray text-sm font-mono">
-            March 2026 · 8 min read
+            October 26, 2025 · 8 min read
           </p>
         </div>
 

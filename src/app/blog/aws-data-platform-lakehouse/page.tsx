@@ -78,7 +78,7 @@ export default function AwsDataPlatformLakehousePost() {
             Lakehouse Pattern
           </h1>
           <p className="mt-4 text-mutedGray text-sm font-mono">
-            July 2026 &middot; 8 min read
+            November 5, 2025 &middot; 8 min read
           </p>
         </div>
 

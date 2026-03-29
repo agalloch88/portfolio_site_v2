@@ -61,7 +61,7 @@ export default function APIDesignDataEngineersPost() {
             Endpoints
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 ·{" "}
+            Ryan Kirsch · December 31, 2025 ·{" "}
             <span className="text-cyberTeal">8 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">

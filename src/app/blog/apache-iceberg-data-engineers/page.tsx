@@ -56,7 +56,7 @@ export default function ApacheIcebergDataEngineersPost() {
             Apache Iceberg for Data Engineers: The Complete Guide to Open Table Formats in 2026
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 · <span className="text-cyberTeal">12 min read</span>
+            Ryan Kirsch · November 19, 2025 · <span className="text-cyberTeal">12 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             I build systems that have to survive years of schema changes, engine swaps,

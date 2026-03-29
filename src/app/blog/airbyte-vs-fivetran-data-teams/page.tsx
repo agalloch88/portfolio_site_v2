@@ -51,7 +51,7 @@ export default function AirbyteVsFivetranPost() {
             Airbyte vs. Fivetran: Which One Makes Sense for Your Data Team?
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 · <span className="text-cyberTeal">9 min read</span>
+            Ryan Kirsch · February 13, 2026 · <span className="text-cyberTeal">9 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             Most data teams do not want to build and maintain dozens of ingestion pipelines by hand.

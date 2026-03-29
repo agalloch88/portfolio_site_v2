@@ -51,7 +51,7 @@ export default function DESkills2026Post() {
             Data Engineering Skills That Actually Matter in 2026
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 · <span className="text-cyberTeal">9 min read</span>
+            Ryan Kirsch · February 15, 2026 · <span className="text-cyberTeal">9 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             Job descriptions in data engineering have always been a mix of real requirements and aspirational

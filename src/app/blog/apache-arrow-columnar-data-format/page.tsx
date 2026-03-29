@@ -45,7 +45,7 @@ export default function ApacheArrowColumnarDataFormatPost() {
             <span className="text-xs font-medium bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full">
               Data Engineering
             </span>
-            <span className="text-sm text-gray-500">March 28, 2026</span>
+            <span className="text-sm text-gray-500">March 29, 2026</span>
             <span className="text-sm text-gray-500">8 min read</span>
             <span className="text-sm text-gray-500">Ryan Kirsch</span>
           </div>

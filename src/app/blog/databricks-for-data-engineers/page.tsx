@@ -10,7 +10,7 @@ export default function DatabricksForDataEngineers() {
   return (
     <article className="max-w-3xl mx-auto px-4 py-12">
       <header className="mb-10">
-        <div className="text-sm text-gray-500 mb-3">March 27, 2026 · 12 min read</div>
+        <div className="text-sm text-gray-500 mb-3">March 20, 2026 · 12 min read</div>
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           Databricks for Data Engineers: What You Need to Know
         </h1>

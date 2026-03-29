@@ -60,7 +60,7 @@ export default function CostEfficientDataEngineeringPost() {
             Sacrificing Reliability
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 · <span className="text-cyberTeal">10-12 min read</span>
+            Ryan Kirsch · March 18, 2026 · <span className="text-cyberTeal">10-12 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             Cost control is not about starving your platform. It is about aligning

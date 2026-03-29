@@ -64,7 +64,7 @@ export default function IaCDataEngineeringPost() {
             Data Platforms
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 ·{" "}
+            Ryan Kirsch · January 2, 2026 ·{" "}
             <span className="text-cyberTeal">8 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">

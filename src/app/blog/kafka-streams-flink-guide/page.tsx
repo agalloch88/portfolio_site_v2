@@ -75,7 +75,7 @@ export default function KafkaStreamsFlinkGuidePost() {
             Real-Time Data Processing with Kafka Streams and Flink: A Production Guide
           </h1>
           <p className="mt-4 text-mutedGray text-sm font-mono">
-            July 2026 · 11 min read
+            October 31, 2025 · 11 min read
           </p>
         </div>
 

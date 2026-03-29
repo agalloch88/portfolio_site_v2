@@ -75,7 +75,7 @@ export default function DataMeshArchitectureGuidePost() {
             Data Mesh Architecture: A Practical Guide for Data Engineers
           </h1>
           <p className="mt-4 text-mutedGray text-sm font-mono">
-            March 27, 2026 &middot; 11 min read
+            November 23, 2025 &middot; 11 min read
           </p>
         </div>
 

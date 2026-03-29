@@ -60,7 +60,7 @@ export default function DataLineageCatalogPost() {
             Data Lineage and Catalog Tools: The Practical Comparison for 2026
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 2026 ·{" "}
+            Ryan Kirsch · January 4, 2026 ·{" "}
             <span className="text-cyberTeal">8 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">

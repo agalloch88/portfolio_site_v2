@@ -56,7 +56,7 @@ export default function RealTimeDataEngineeringKafkaFlinkPost() {
             Real-Time Data Engineering: Kafka, Flink, and the Stream Processing Stack
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 28, 2026 · <span className="text-cyberTeal">9 min read</span>
+            Ryan Kirsch · March 23, 2026 · <span className="text-cyberTeal">9 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             Why batch is no longer enough, what the real-time stack actually looks like, and

@@ -58,7 +58,7 @@ export default function DbtExposuresGuidePost() {
             dbt Exposures: Documenting Downstream Dependencies
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 27, 2026 ·{" "}
+            Ryan Kirsch · January 7, 2026 ·{" "}
             <span className="text-cyberTeal">11 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">

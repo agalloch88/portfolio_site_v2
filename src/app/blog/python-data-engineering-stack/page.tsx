@@ -71,7 +71,7 @@ export default function PythonDataEngineeringStackPost() {
             Python Data Stack
           </h1>
           <p className="mt-4 text-mutedGray text-sm font-mono">
-            July 2025 · 10 min read
+            November 12, 2025 · 10 min read
           </p>
         </div>
 

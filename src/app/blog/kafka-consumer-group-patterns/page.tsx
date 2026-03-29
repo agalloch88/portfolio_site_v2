@@ -56,7 +56,7 @@ export default function KafkaConsumerGroupPatternsPost() {
             Kafka Consumer Group Patterns for High-Throughput Pipelines
           </h1>
           <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · March 27, 2026 · <span className="text-cyberTeal">12 min read</span>
+            Ryan Kirsch · January 5, 2026 · <span className="text-cyberTeal">12 min read</span>
           </p>
           <p className="mt-4 text-lg text-mutedGray leading-relaxed">
             This is a practical guide to scaling Kafka consumers in production. It is not

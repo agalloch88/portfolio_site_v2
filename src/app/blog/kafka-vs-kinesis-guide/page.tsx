@@ -72,7 +72,7 @@ export default function KafkaVsKinesisGuidePost() {
             Streaming in 2026
           </h1>
           <p className="mt-4 text-mutedGray text-sm font-mono">
-            March 26, 2026 &middot; 9 min read
+            November 9, 2025 &middot; 9 min read
           </p>
         </div>
 
