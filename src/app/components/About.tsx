@@ -52,7 +52,7 @@ export default function About() {
               <img
                 src="/ryan-bjj.jpg"
                 alt="Ryan with Professor Fred Silva at Lucas Lepri Jiu Jitsu Academy"
-                className="w-48 h-48 rounded-lg object-cover flex-shrink-0"
+                className="w-48 h-48 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-lg object-cover flex-shrink-0"
               />
             </picture>
             <p className="text-sm text-steel italic">

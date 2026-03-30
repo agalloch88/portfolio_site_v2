@@ -278,7 +278,7 @@ export default function Projects() {
           <p className="text-mutedGray text-sm mb-6 max-w-xl">
             Side projects I ship on nights and weekends. Full-stack execution from idea to production.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <a
               href="https://roampage.vercel.app"
               target="_blank"
@@ -307,6 +307,21 @@ export default function Projects() {
               </div>
               <p className="text-xs text-mutedGray leading-relaxed">
                 BJJ lifestyle apparel brand. Pre-launch email capture. Static site with custom WebGL GLSL shader.
+              </p>
+            </a>
+            <a
+              href="https://queencityclaw.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block bg-charcoal border border-white/10 hover:border-cyberTeal/30 rounded-xl p-5 transition-all duration-200 hover:-translate-y-0.5"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-lg">👑</span>
+                <span className="font-mono text-sm font-semibold text-white group-hover:text-cyberTeal transition-colors">Queen City Claw</span>
+                <span className="text-xs text-steel ml-auto">Live</span>
+              </div>
+              <p className="text-xs text-mutedGray leading-relaxed">
+                Personal AI setup service for Charlotte professionals. OpenClaw configuration, voice calling, and managed care. Next.js, Vercel.
               </p>
             </a>
           </div>
