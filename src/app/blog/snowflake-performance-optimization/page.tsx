@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title:
-    "Snowflake Performance Optimization: The Queries, Warehouses, and Patterns That Actually Move the Needle | Ryan Kirsch",
+    "Snowflake Performance Optimization: Clustering, Caching, and Query Tuning | Ryan Kirsch - Data Engineer",
   description:
-    "A practical guide to Snowflake performance optimization. Clustering keys, query pruning, warehouse sizing, result caching, and the specific SQL patterns that cause the most expensive scans in production.",
+    "A practical guide to Snowflake performance optimization: clustering keys, automatic clustering, result and metadata caching, materialized views, query profiling with EXPLAIN, and warehouse sizing strategy.",
   openGraph: {
     title:
-      "Snowflake Performance Optimization: The Queries, Warehouses, and Patterns That Actually Move the Needle",
+      "Snowflake Performance Optimization: Clustering, Caching, and Query Tuning | Ryan Kirsch - Data Engineer",
     description:
-      "Practical Snowflake optimization: clustering keys, query pruning, warehouse sizing, result caching, and the SQL anti-patterns that cause expensive scans in production.",
+      "A practical guide to Snowflake performance optimization: clustering keys, automatic clustering, result and metadata caching, materialized views, query profiling with EXPLAIN, and warehouse sizing strategy.",
     type: "article",
     url: "https://ryankirsch.dev/blog/snowflake-performance-optimization",
     siteName: "Ryan Kirsch",
@@ -18,33 +18,33 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Snowflake Performance Optimization: The Queries, Warehouses, and Patterns That Actually Move the Needle",
+      "Snowflake Performance Optimization: Clustering, Caching, and Query Tuning | Ryan Kirsch - Data Engineer",
     description:
-      "Practical Snowflake optimization: clustering keys, query pruning, warehouse sizing, result caching, and the SQL anti-patterns that cause expensive scans in production.",
+      "A practical guide to Snowflake performance optimization: clustering keys, automatic clustering, result and metadata caching, materialized views, query profiling with EXPLAIN, and warehouse sizing strategy.",
   },
   alternates: { canonical: "/blog/snowflake-performance-optimization" },
 };
 
-export default function SnowflakePerformancePost() {
+export default function SnowflakePerformanceOptimizationPost() {
   const postUrl = encodeURIComponent(
     "https://ryankirsch.dev/blog/snowflake-performance-optimization"
   );
   const postTitle = encodeURIComponent(
-    "Snowflake Performance Optimization: The Queries, Warehouses, and Patterns That Actually Move the Needle"
+    "Snowflake Performance Optimization: Clustering, Caching, and Query Tuning"
   );
 
   return (
     <main className="min-h-screen pt-24 pb-16">
       <div className="max-w-2xl mx-auto px-6">
         <nav className="inline-flex items-center text-sm text-mutedGray">
-          <span className="text-electricBlue">←</span>
+          <span className="text-electricBlue">&larr;</span>
           <Link
             href="/"
             className="ml-2 text-electricBlue hover:text-white transition-colors"
           >
             Home
           </Link>
-          <span className="mx-2 text-steel">/</span>
+          <span className="mx-2">/</span>
           <Link
             href="/blog"
             className="text-electricBlue hover:text-white transition-colors"
@@ -53,361 +53,303 @@ export default function SnowflakePerformancePost() {
           </Link>
         </nav>
 
-        <header className="mt-10">
-          <p className="text-sm font-mono text-cyberTeal uppercase tracking-[0.2em]">
-            Blog
-          </p>
-          <h1 className="mt-4 text-3xl sm:text-4xl font-bold text-white">
-            Snowflake Performance Optimization: The Queries, Warehouses, and
-            Patterns That Actually Move the Needle
+        <div className="mt-10">
+          <div className="flex flex-wrap gap-2 mb-6">
+            {["Snowflake", "Query Optimization", "Data Warehouse", "SQL", "Performance", "Data Engineering"].map(
+              (tag) => (
+                <span
+                  key={tag}
+                  className="text-xs font-mono px-2 py-1 rounded bg-steel/10 text-mutedGray border border-steel/20"
+                >
+                  {tag}
+                </span>
+              )
+            )}
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
+            Snowflake Performance Optimization: Clustering, Caching, and Query Tuning
           </h1>
-          <p className="mt-3 text-sm font-mono text-mutedGray">
-            Ryan Kirsch · December 7, 2025 ·{" "}
-            <span className="text-cyberTeal">10 min read</span>
+          <p className="mt-4 text-mutedGray text-sm font-mono">
+            March 29, 2026 &middot; 9 min read
           </p>
-          <p className="mt-4 text-lg text-mutedGray leading-relaxed">
-            Snowflake is elastic by design -- you can throw more compute at
-            most performance problems. But the right answer is rarely
-            &ldquo;bigger warehouse.&rdquo; Most slow Snowflake queries are slow because
-            of how they scan data, not because of compute limits. This guide
-            covers the optimizations that actually matter, in order of impact.
+        </div>
+
+        <div className="mt-10 prose prose-invert prose-sm max-w-none space-y-8 text-[15px] leading-relaxed text-steel">
+          <p>
+            Snowflake&apos;s auto-scaling and managed infrastructure make it easy to get started,
+            and easy to spend too much. Throwing a larger warehouse at a slow query is the most
+            common response to Snowflake performance problems, and usually the wrong one. Most
+            slow queries are slow because of poor pruning, unnecessary full table scans, or
+            missing caching opportunities. Fix those first. Scale warehouse size second.
           </p>
-        </header>
 
-        <div className="mt-10 prose prose-invert max-w-none text-lightGray prose-headings:text-white prose-p:text-lightGray prose-li:text-lightGray prose-strong:text-white prose-a:text-electricBlue hover:prose-a:text-white">
-          <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-white">
-              How Snowflake Stores Data (and Why It Matters for Performance)
-            </h2>
-            <p>
-              Snowflake stores data in micro-partitions: compressed columnar
-              files of roughly 50-500MB each. Every micro-partition has
-              metadata that records the min and max values for each column.
-              When you run a query with a WHERE clause, Snowflake uses this
-              metadata to prune partitions -- it skips any partition whose
-              column range cannot contain the values you are filtering for.
-            </p>
-            <p>
-              This is called partition pruning, and it is the single most
-              important performance concept in Snowflake. A query that scans
-              10% of partitions is not 10x faster than one that scans
-              everything -- it is often 50-100x faster because it reads far
-              less data from storage and requires much less compute.
-            </p>
-            <p>
-              The implication: queries that filter on high-cardinality columns
-              with poor natural ordering get poor pruning, and queries that
-              filter on naturally sorted columns get excellent pruning. A table
-              ordered by <code>created_at</code> will have strong pruning on
-              date range queries because recent rows land in recent partitions.
-              A table ordered by <code>user_id</code> will have poor pruning
-              on date range queries because users are scattered across all
-              partitions.
-            </p>
-          </section>
+          <h2 className="text-xl font-semibold text-white mt-10">
+            Understanding Micro-Partitions
+          </h2>
+          <p>
+            Snowflake stores table data in micro-partitions: immutable, compressed columnar files
+            of 50 to 500 MB uncompressed. Each micro-partition stores the min and max value of
+            every column it contains. The query optimizer uses these metadata values to prune
+            micro-partitions that cannot contain rows matching a filter condition, without
+            reading the actual data.
+          </p>
+          <p>
+            This pruning is the foundation of Snowflake query performance. A query with a
+            selective filter on a well-pruned column can skip 90+ percent of a table&apos;s
+            micro-partitions. A query on a column with poor pruning reads everything.
+            The <code>SYSTEM$CLUSTERING_INFORMATION</code> function tells you how well a table
+            is clustered on a given column.
+          </p>
+          <pre className="bg-steel/10 border border-steel/20 rounded-lg p-4 text-xs font-mono text-electricBlue overflow-x-auto">
+            {`-- Check clustering depth (lower is better; 1.0 is perfect)
+SELECT SYSTEM$CLUSTERING_INFORMATION('orders', '(created_at)');
 
-          <section className="mt-8 space-y-4">
-            <h2 className="text-2xl font-semibold text-white">
-              Clustering Keys: When to Use Them and When Not To
-            </h2>
-            <p>
-              Snowflake clustering keys let you explicitly control how data is
-              sorted across micro-partitions. When you define a clustering key,
-              Snowflake automatically re-sorts new data and periodically
-              re-clusters the table to maintain good ordering.
-            </p>
-            <pre className="bg-obsidianDark border border-steel rounded-lg p-4 overflow-x-auto text-sm font-mono">
-              <code>{`-- Add a clustering key on a large fact table
-ALTER TABLE analytics.fct_orders
-CLUSTER BY (order_date, customer_segment);
+-- Check micro-partition stats in query profile
+-- After running a query, check "Partitions scanned" vs "Partitions total"
+-- High ratio = poor pruning = performance opportunity
 
--- Check clustering depth (lower = better, <3 is well-clustered)
-SELECT SYSTEM$CLUSTERING_INFORMATION(
-    'analytics.fct_orders',
-    '(order_date, customer_segment)'
-)::variant:average_depth AS avg_depth;
+SELECT
+    query_id,
+    partitions_scanned,
+    partitions_total,
+    ROUND(partitions_scanned / NULLIF(partitions_total, 0) * 100, 1) AS pct_scanned
+FROM snowflake.account_usage.query_history
+WHERE query_text ILIKE '%orders%'
+ORDER BY start_time DESC
+LIMIT 20;`}
+          </pre>
 
--- Monitor clustering over time
-SELECT *
-FROM TABLE(INFORMATION_SCHEMA.AUTOMATIC_CLUSTERING_HISTORY(
-    TABLE_NAME => 'analytics.fct_orders',
-    DATE_RANGE_START => DATEADD('day', -7, CURRENT_DATE)
-));`}</code>
-            </pre>
-            <p>
-              Clustering keys make sense when:
-            </p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>The table is very large (100GB+) and frequently queried</li>
-              <li>Queries consistently filter on a small set of columns</li>
-              <li>
-                Those columns have poor natural clustering (e.g., a UUID
-                primary key loaded in random order)
-              </li>
-            </ul>
-            <p>
-              Clustering keys do NOT make sense when:
-            </p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>The table is small (Snowflake scans small tables fast regardless)</li>
-              <li>Queries filter on many different column combinations</li>
-              <li>
-                The data is already naturally ordered (e.g., a table appended
-                by <code>created_at</code> already clusters well on date)
-              </li>
-            </ul>
-            <p>
-              Automatic clustering costs Snowflake credits. Check the{" "}
-              <code>AUTOMATIC_CLUSTERING_HISTORY</code> view to confirm the
-              cost is justified by the query performance gain.
-            </p>
-          </section>
+          <h2 className="text-xl font-semibold text-white mt-10">
+            Clustering Keys: When and How to Use Them
+          </h2>
+          <p>
+            Natural clustering is what Snowflake provides by default: data is organized in
+            micro-partitions roughly in the order it was loaded. If your table is loaded in date
+            order and your queries filter by date, natural clustering is often sufficient and free.
+          </p>
+          <p>
+            Explicit clustering keys are for tables where natural clustering has degraded due to
+            DML operations (updates, deletes, merges), or where queries consistently filter on a
+            column that is not correlated with load order. Set clustering keys on large tables
+            (multi-terabyte) where partition pruning is materially poor.
+          </p>
+          <pre className="bg-steel/10 border border-steel/20 rounded-lg p-4 text-xs font-mono text-electricBlue overflow-x-auto">
+            {`-- Add a clustering key to an existing large table
+ALTER TABLE orders CLUSTER BY (DATE_TRUNC('day', created_at), region);
 
-          <section className="mt-8 space-y-4">
-            <h2 className="text-2xl font-semibold text-white">
-              Query Anti-Patterns That Kill Performance
-            </h2>
-            <p>
-              Most slow Snowflake queries share one of five anti-patterns:
-            </p>
-            <p>
-              <strong>1. Functions on filter columns.</strong> Wrapping a
-              column in a function prevents partition pruning because Snowflake
-              cannot evaluate the function against stored min/max metadata.
-            </p>
-            <pre className="bg-obsidianDark border border-steel rounded-lg p-4 overflow-x-auto text-sm font-mono">
-              <code>{`-- BAD: function prevents pruning
-SELECT * FROM orders
-WHERE DATE_TRUNC('month', order_date) = '2026-03-01';
+-- Enable automatic clustering (Snowflake maintains clustering as data changes)
+ALTER TABLE orders ENABLE AUTOMATIC CLUSTERING;
 
--- GOOD: range filter allows pruning
-SELECT * FROM orders
-WHERE order_date >= '2026-03-01'
-  AND order_date < '2026-04-01';`}</code>
-            </pre>
-            <p>
-              <strong>2. SELECT * on wide tables.</strong> Snowflake is
-              columnar. Reading 50 columns when you need 5 means reading 10x
-              more data.
-            </p>
-            <pre className="bg-obsidianDark border border-steel rounded-lg p-4 overflow-x-auto text-sm font-mono">
-              <code>{`-- BAD: reads all 60 columns
-SELECT * FROM orders WHERE order_date = CURRENT_DATE;
+-- Check automatic clustering status
+SHOW TABLES LIKE 'orders';
+-- Look at clustering_key and automatic_clustering columns
 
--- GOOD: reads only the 4 columns needed
-SELECT order_id, customer_id, amount_usd, status
-FROM orders
-WHERE order_date = CURRENT_DATE;`}</code>
-            </pre>
-            <p>
-              <strong>3. DISTINCT where it is not needed.</strong> DISTINCT
-              forces a sort and deduplication of the entire result set.
-              If uniqueness is already guaranteed by the table design or
-              the JOIN logic, remove it.
-            </p>
-            <p>
-              <strong>4. Unbounded CTEs referenced multiple times.</strong>{" "}
-              Snowflake does not materialize CTEs by default -- it re-evaluates
-              them each time they are referenced. A CTE scanning 500M rows
-              referenced 3 times in a query scans 1.5B rows.
-            </p>
-            <pre className="bg-obsidianDark border border-steel rounded-lg p-4 overflow-x-auto text-sm font-mono">
-              <code>{`-- BAD: large_cte scanned twice
-WITH large_cte AS (
-    SELECT * FROM events WHERE event_date >= '2026-01-01'
-)
-SELECT a.user_id, b.event_count
-FROM large_cte a
-JOIN (SELECT user_id, COUNT(*) AS event_count FROM large_cte GROUP BY 1) b
-  ON a.user_id = b.user_id;
+-- For high-cardinality columns, use a truncation expression
+ALTER TABLE events CLUSTER BY (
+    DATE_TRUNC('hour', event_timestamp),
+    event_type
+);`}
+          </pre>
+          <p>
+            Automatic clustering runs in the background using Snowflake-managed compute and has
+            a credit cost. Evaluate it by comparing query performance and credits consumed before
+            and after enabling it on a specific table. Do not enable it reflexively on every large
+            table.
+          </p>
 
--- GOOD: materialize to a temp table first
-CREATE OR REPLACE TEMPORARY TABLE filtered_events AS
-SELECT * FROM events WHERE event_date >= '2026-01-01';
+          <h2 className="text-xl font-semibold text-white mt-10">
+            Snowflake&apos;s Three Caching Layers
+          </h2>
+          <p>
+            Snowflake maintains three distinct caches, each with different behavior and scope.
+            Understanding them changes how you structure queries and warehouse configurations.
+          </p>
+          <p>
+            The result cache holds the output of every query for 24 hours. If an identical query
+            runs again within that window on unchanged data, Snowflake returns the cached result
+            instantly with zero compute cost. This is why dashboards with fixed date ranges often
+            feel fast after the first load.
+          </p>
+          <p>
+            The local disk cache (also called the warehouse cache) holds micro-partition data
+            that has been read by the current warehouse. Subsequent queries on the same warehouse
+            that need the same micro-partitions read from local SSD instead of remote object
+            storage. This cache is lost when the warehouse suspends, which is why auto-suspend
+            aggressiveness is a real performance tradeoff.
+          </p>
+          <p>
+            The metadata cache stores min/max values, distinct counts, and row counts for
+            micro-partitions. Queries that can be fully answered from metadata (e.g.,
+            <code>SELECT MIN(created_at) FROM orders</code>) complete in milliseconds without
+            scanning any data.
+          </p>
+          <pre className="bg-steel/10 border border-steel/20 rounded-lg p-4 text-xs font-mono text-electricBlue overflow-x-auto">
+            {`-- These queries use the metadata cache and cost near zero
+SELECT COUNT(*) FROM orders;
+SELECT MIN(created_at), MAX(created_at) FROM orders;
+SELECT COUNT(DISTINCT region) FROM orders;
 
--- Then reference filtered_events twice without rescanning`}</code>
-            </pre>
-            <p>
-              <strong>5. Exploding JOINs.</strong> A JOIN that unexpectedly
-              multiplies rows (many-to-many without deduplication) forces
-              Snowflake to process a result set far larger than either input.
-              Always verify join cardinality with a COUNT before running
-              expensive downstream aggregations.
-            </p>
-          </section>
-
-          <section className="mt-8 space-y-4">
-            <h2 className="text-2xl font-semibold text-white">
-              Result Caching and Query Caching
-            </h2>
-            <p>
-              Snowflake has two caching layers that are often overlooked:
-            </p>
-            <p>
-              <strong>Result cache</strong>: If the exact same query runs
-              twice within 24 hours and the underlying data has not changed,
-              Snowflake returns the cached result instantly with zero compute
-              cost. This works for identical query text -- even a comment
-              change breaks the cache. Design dashboard queries to be
-              deterministic and avoid session-specific variables that
-              prevent caching.
-            </p>
-            <p>
-              <strong>Metadata cache</strong>: Snowflake caches micro-partition
-              metadata in memory on each warehouse. The first query after a
-              warehouse cold start is slower because the metadata must be
-              loaded. Queries 2+ benefit from warm metadata. This is why
-              keeping a warehouse running for frequently-accessed tables
-              improves p50 latency even when the result cache is not hit.
-            </p>
-            <pre className="bg-obsidianDark border border-steel rounded-lg p-4 overflow-x-auto text-sm font-mono">
-              <code>{`-- Check if a query hit the result cache
-SELECT 
+-- Check if a query hit the result cache
+SELECT
     query_id,
     query_text,
+    is_client_generated_statement,
     execution_status,
-    -- These are 0 for result cache hits
-    bytes_scanned,
-    partitions_scanned,
-    -- This is 0 for result cache hits
+    total_elapsed_time,
     credits_used_cloud_services
-FROM TABLE(INFORMATION_SCHEMA.QUERY_HISTORY_BY_USER(
-    USER_NAME => CURRENT_USER(),
-    RESULT_LIMIT => 10
-))
-ORDER BY start_time DESC;`}</code>
-            </pre>
-          </section>
+FROM snowflake.account_usage.query_history
+WHERE query_text = 'SELECT COUNT(*) FROM orders'
+ORDER BY start_time DESC
+LIMIT 5;
+-- Look for credits_used_cloud_services = 0 (result cache hit)`}
+          </pre>
 
-          <section className="mt-8 space-y-4">
-            <h2 className="text-2xl font-semibold text-white">
-              Warehouse Sizing: The Right Way to Think About It
-            </h2>
-            <p>
-              Snowflake virtual warehouses scale by doubling: XS, S, M, L, XL,
-              2XL, 3XL, 4XL. Each size tier doubles the compute and roughly
-              halves the execution time -- but also doubles the credit cost.
-              The break-even is straightforward: if doubling the warehouse
-              size cuts execution time in half, cost is identical. If it cuts
-              execution time by 30%, you pay 2x for 30% improvement.
-            </p>
-            <p>
-              The sizing rules that hold in practice:
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>
-                <strong>Analytical queries with many concurrent users:</strong>{" "}
-                Scale out with multiple warehouses rather than a single large
-                one. Query concurrency, not compute, is often the bottleneck.
-              </li>
-              <li>
-                <strong>ETL/ELT jobs (dbt, Dagster):</strong> Size to the
-                largest model in your run. Most transformations are IO-bound,
-                not compute-bound, so M or L is sufficient unless you are
-                running complex window functions on billions of rows.
-              </li>
-              <li>
-                <strong>Ad hoc queries:</strong> XS or S with auto-suspend at
-                1-5 minutes. These should hit the result cache frequently, and
-                when they do not, they are one-off so cost is low.
-              </li>
-              <li>
-                <strong>Large batch loads:</strong> Larger warehouses improve
-                COPY INTO throughput almost linearly up to 2XL. For one-time
-                historical loads, the credit cost of a short 2XL run is often
-                less than a long S run.
-              </li>
-            </ul>
-          </section>
+          <h2 className="text-xl font-semibold text-white mt-10">
+            Materialized Views for Expensive Aggregations
+          </h2>
+          <p>
+            Materialized views in Snowflake are automatically maintained as the base table
+            changes. They are most valuable for aggregation queries that run frequently against
+            large append-only tables, where recomputing the aggregation on every query is wasteful.
+          </p>
+          <pre className="bg-steel/10 border border-steel/20 rounded-lg p-4 text-xs font-mono text-electricBlue overflow-x-auto">
+            {`-- Create a materialized view for a high-frequency aggregation
+CREATE MATERIALIZED VIEW daily_revenue_mv AS
+SELECT
+    DATE_TRUNC('day', created_at) AS revenue_date,
+    region,
+    product_category,
+    SUM(amount) AS total_revenue,
+    COUNT(DISTINCT order_id) AS order_count
+FROM orders
+WHERE status = 'completed'
+GROUP BY 1, 2, 3;
 
-          <section className="mt-8 space-y-4">
-            <h2 className="text-2xl font-semibold text-white">
-              Using Query Profile to Diagnose Slow Queries
-            </h2>
-            <p>
-              Snowflake&apos;s Query Profile is the most useful tool for
-              diagnosis. For any query in the query history, you can see a
-              visual execution plan with time and byte counts per operator.
-            </p>
-            <p>
-              The patterns that show up most often in slow query profiles:
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>
-                <strong>TableScan operator uses high % of time:</strong>{" "}
-                Poor pruning. Check the &ldquo;Partitions scanned&rdquo; vs &ldquo;Partitions
-                total&rdquo; ratio. If it is above 50%, the query is not pruning
-                well and a clustering key or query rewrite is needed.
-              </li>
-              <li>
-                <strong>Sort operator is large:</strong> Often caused by
-                window functions, ORDER BY on large intermediate results, or
-                DISTINCT. Consider pushing the sort earlier or materializing
-                intermediate results.
-              </li>
-              <li>
-                <strong>Join is very large:</strong> Verify cardinality.
-                An unexpected many-to-many join is usually a missing dedup
-                step, not a compute problem.
-              </li>
-              <li>
-                <strong>Spillage to local or remote disk:</strong> The query
-                exceeds warehouse memory. Either the warehouse is undersized
-                for this specific query, or the query is producing an
-                intermediate result that can be reduced by filtering earlier.
-              </li>
-            </ul>
-            <p>
-              The diagnostic workflow: run the query, open Query Profile,
-              identify the largest operator by execution time, read the
-              operator stats, apply a targeted fix, re-run. One specific
-              change per iteration. This is faster than guessing.
-            </p>
-          </section>
-        </div>
+-- Queries on the MV are fast regardless of base table size
+SELECT revenue_date, SUM(total_revenue)
+FROM daily_revenue_mv
+WHERE revenue_date >= DATEADD('day', -30, CURRENT_DATE)
+GROUP BY revenue_date
+ORDER BY revenue_date;`}
+          </pre>
+          <p>
+            Materialized views have constraints: they do not support joins across multiple base
+            tables, and maintenance has a credit cost proportional to how frequently the base
+            table changes. Use them for stable aggregations on tables that are primarily appended
+            to, not heavily updated.
+          </p>
 
-        <div className="mt-12 pt-8 border-t border-steel">
-          <p className="text-sm text-mutedGray">Share this post:</p>
-          <div className="mt-3 flex gap-4">
-            <a
-              href={`https://twitter.com/intent/tweet?text=${postTitle}&url=${postUrl}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-electricBlue hover:text-white transition-colors text-sm font-mono"
-            >
-              Twitter/X
-            </a>
-            <a
-              href={`https://www.linkedin.com/sharing/share-offsite/?url=${postUrl}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-electricBlue hover:text-white transition-colors text-sm font-mono"
-            >
-              LinkedIn
-            </a>
+          <h2 className="text-xl font-semibold text-white mt-10">
+            Query Profiling: Reading the Query Profile
+          </h2>
+          <p>
+            Snowflake&apos;s query profile (accessible via the web UI or
+            <code>EXPLAIN USING TABULAR</code>) shows the execution plan and operator-level
+            statistics. The most important metrics: bytes scanned (look for unnecessary full
+            scans), bytes spilled to local and remote storage (indicates memory pressure),
+            and partitions scanned vs. total (the pruning ratio).
+          </p>
+          <pre className="bg-steel/10 border border-steel/20 rounded-lg p-4 text-xs font-mono text-electricBlue overflow-x-auto">
+            {`-- Inspect query profile programmatically
+SELECT
+    query_id,
+    query_text,
+    bytes_scanned,
+    bytes_spilled_to_local_storage,
+    bytes_spilled_to_remote_storage,
+    partitions_scanned,
+    partitions_total,
+    warehouse_size,
+    total_elapsed_time / 1000 AS elapsed_seconds,
+    execution_time / 1000 AS execution_seconds
+FROM snowflake.account_usage.query_history
+WHERE
+    database_name = 'ANALYTICS'
+    AND start_time >= DATEADD('day', -7, CURRENT_TIMESTAMP)
+    AND bytes_spilled_to_remote_storage > 0  -- spill = candidate for larger warehouse
+ORDER BY bytes_spilled_to_remote_storage DESC
+LIMIT 20;`}
+          </pre>
+
+          <h2 className="text-xl font-semibold text-white mt-10">
+            Warehouse Sizing: The Right Time to Scale Up
+          </h2>
+          <p>
+            Scaling warehouse size (from S to M to L, etc.) adds more compute nodes. Each size
+            doubles the compute. More compute means more parallel processing of micro-partitions
+            within a single query. Scale up when queries are spilling to local or remote storage,
+            when execution time is dominated by processing rather than scanning, or when concurrent
+            query throughput needs to increase.
+          </p>
+          <p>
+            Do not scale up to fix poor pruning. A 4X warehouse scanning all micro-partitions
+            costs 4X the credits and still does unnecessary work. Fix the clustering or query
+            predicate first, then right-size the warehouse for the optimized query.
+          </p>
+          <p>
+            Use multi-cluster warehouses for concurrency scaling: they spin up additional clusters
+            when the primary cluster is fully loaded with concurrent queries. This is the right
+            tool for BI dashboard load, not for making individual queries faster.
+          </p>
+
+          <h2 className="text-xl font-semibold text-white mt-10">
+            The Optimization Checklist
+          </h2>
+          <p>
+            When a Snowflake query is slow, work through this order: check the partition pruning
+            ratio in the query profile, verify the filter column is selective and well-clustered,
+            check for bytes spilled to storage (memory pressure), look for cartesian joins or
+            missing join conditions, and evaluate whether a materialized view or result cache
+            policy could serve this query pattern. Only after working through these steps should
+            warehouse size enter the conversation.
+          </p>
+
+          <div className="mt-12 pt-8 border-t border-steel/20 space-y-4">
+            <p className="text-sm text-mutedGray leading-relaxed">
+              Questions or pushback on any of this?{" "}
+              <a
+                href="https://www.linkedin.com/in/ryanmkirsch/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-electricBlue hover:text-white transition-colors"
+              >
+                Find me on LinkedIn.
+              </a>
+            </p>
+            <div className="flex gap-3">
+              <a
+                href={`https://twitter.com/intent/tweet?url=${postUrl}&text=${postTitle}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-mono text-mutedGray hover:text-white transition-colors border border-steel/30 px-3 py-1 rounded"
+              >
+                Share on X
+              </a>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${postUrl}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-mono text-mutedGray hover:text-white transition-colors border border-steel/30 px-3 py-1 rounded"
+              >
+                Share on LinkedIn
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div className="mt-8 pt-8 border-t border-steel">
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-full bg-cyberTeal/20 border border-cyberTeal/40 flex items-center justify-center flex-shrink-0">
-              <span className="text-cyberTeal font-bold text-sm">RK</span>
-            </div>
-            <div>
-              <p className="font-semibold text-white">Ryan Kirsch</p>
-              <p className="text-sm text-mutedGray mt-1">
-                Senior Data Engineer with experience building production
-                pipelines at scale. Works with dbt, Snowflake, and Dagster, and
-                writes about data engineering patterns from production
-                experience.{" "}
-                <Link
-                  href="/"
-                  className="text-electricBlue hover:text-white transition-colors"
-                >
-                  See his full portfolio.
-                </Link>
-              </p>
-            </div>
+          <div className="mt-8 p-5 bg-steel/5 rounded-xl border border-steel/20">
+            <p className="text-sm text-mutedGray leading-relaxed">
+              <strong className="text-white">Ryan Kirsch</strong> is a senior data
+              engineer with 8+ years building data infrastructure at media, SaaS, and
+              fintech companies. He specializes in Kafka, dbt, Snowflake, and Spark,
+              and writes about data engineering patterns from production experience.{" "}
+              <Link
+                href="/"
+                className="text-electricBlue hover:text-white transition-colors"
+              >
+                See his full portfolio.
+              </Link>
+            </p>
           </div>
         </div>
       </div>
